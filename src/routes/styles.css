@@ -8,4 +8,9 @@
 body {
 	background-color: var(--primary);
 	padding: 0px;
+
+	font-size: large;
+	font-weight: 500;
+	font-family: "IBM Plex Mono", monospace;
 }
+
