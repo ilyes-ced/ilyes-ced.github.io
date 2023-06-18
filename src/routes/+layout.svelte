@@ -1,49 +1,73 @@
 <script lang='ts'>
-	// The ordering of these imports is critical to your app working properly
-	import '@skeletonlabs/skeleton/themes/theme-rocket.css';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
+	import '@skeletonlabs/skeleton/themes/theme-crimson.css';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, AppRail, AppRailTile, LightSwitch, AppRailAnchor } from '@skeletonlabs/skeleton';
+	import { active_page } from '../page_store';
+	import { page } from '$app/stores';
+	
+	import Github from '../lib/icons/github.svelte';
+	import Twitter from '../lib/icons/twitter.svelte';
+	import Linkedin from '../lib/icons/linkedin.svelte';
+	
+	let currentTile: number = 0;
+
+
+
 </script>
 
-<!-- App Shell -->
+
 <AppShell>
 	<svelte:fragment slot="header">
-		<!-- App Bar -->
-		<AppBar>
-			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
-			</svelte:fragment>
+		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+			<svelte:fragment slot="lead">(icon)</svelte:fragment>
+			(title)
 			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
+				<Github  />
+				<Twitter  />
+				<Linkedin  />
+				<LightSwitch />
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
-	<!-- Page Route Content -->
-	<slot />
+	
+	<svelte:fragment slot="sidebarLeft">
+		<AppRail selected={active_page}>
+			<AppRailAnchor  href="/" selected={$page.url.pathname === '/'}>
+				<svelte:fragment slot="lead">(icon)</svelte:fragment>
+				<span>Home</span>
+			</AppRailAnchor>
+			<AppRailAnchor  href="/about" selected={$page.url.pathname === '/about'}>
+				<svelte:fragment slot="lead">(icon)</svelte:fragment>
+				<span>About</span>
+			</AppRailAnchor>
+			<AppRailAnchor  href="/projects" selected={$page.url.pathname === '/projects'}>
+				<svelte:fragment slot="lead">(icon)</svelte:fragment>
+				<span>Projects</span>
+			</AppRailAnchor>
+
+
+
+			<!-- 
+				<svelte:fragment slot="trail">
+					<AppRailTile bind:group={currentTile} name="tile-4" value={3} title="tile-4">
+						<svelte:fragment slot="lead"><Github/></svelte:fragment>
+						<span>Projects</span>
+					</AppRailTile>
+				</svelte:fragment>
+			-->
+
+
+
+				
+
+
+
+		</AppRail>
+	</svelte:fragment>
+
+
+
+
+	<slot active_page={currentTile} />
 </AppShell>
