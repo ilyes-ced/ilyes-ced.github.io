@@ -1,12 +1,13 @@
-import { join } from 'path'
-import skeleton from '@skeletonlabs/skeleton/tailwind/skeleton.cjs'
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {},
 	},
-	plugins: [...skeleton()],
+	plugins: [require("@tailwindcss/typography"),require("daisyui")],
+	daisyui: {
+		themes: true, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
+		darkTheme: "dark", // name of one of the included themes for dark mode
+		logs: false, // Shows info about daisyUI version and used config in the console when building your CSS
+	  }
 }
