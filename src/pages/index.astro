@@ -2,75 +2,167 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const last_posts = posts.slice(0, 3);
 ---
 
-<BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Ilyes</div>
-    <div class="text-3xl py-3 font-bold">Software Developper and Freelancer</div>
-    <div class="py-2">
-      <text class="text-lg">
-        I am a Software Developper from Algeria, intrested in all that is related to Computers and Thechnologies, currently intrested in low-level and Embedded Systems
-      </text>
+<BaseLayout sideBarActiveItemID="home" >
+  <div class='hidden lg:block'>
+    <div class="pb-12 mt-5">
+      <div class="text-xl py-1">Hey there 👋</div>
+      <div class="text-5xl font-bold">I'm Ilyes</div>
+      <div class="text-3xl py-3 font-bold">Software Developper and Freelancer</div>
+      <div class="py-2">
+        <text class="text-lg">
+          I am a Software Developper from Algeria, intrested in all that is related to Computers and Thechnologies, currently intrested in low-level and Embedded Systems
+        </text>
+      </div>
+      <div class="mt-8">
+        <a class="btn" href="https://twitter.com/pengu7501795280" target="_blank"> Let's connect!</a>
+      </div>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/pengu7501795280" target="_blank"> Let's connect!</a>
+  
+    <div>
+      <div class="text-3xl w-full font-bold mb-2">My last projects</div>
     </div>
+  
+    <HorizontalCard
+      title="SQLite Clone"
+      img="rsqlite.svg"
+      desc="a simple SQLite clone implemented in rust"
+      url="https://github.com/noot-noot-pengu/RSQLite"
+      badge="Terminal App"
+      tags={["Rust"]}
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Torrent Client"
+      img="/torrent.svg"
+      desc="A torrent client implemented in Rust"
+      url="https://github.com/noot-noot-pengu/torrent"
+      badge="Terminal App"
+      tags={["Rust"]}
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Classic Games"
+      img="/classic.png"
+      desc="nostalgic early 2000s computer games with svelte"
+      url="https://github.com/noot-noot-pengu/classic_games"
+      badge="Full-stack"
+      tags={["Svelte", "Tailwind"]}
+    />
+  
+    <div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    </div>
+  
+    {
+      last_posts.map((post) => (
+        <>
+          <HorizontalCard
+            title={post.data.title}
+            img={post.data.heroImage}
+            desc={post.data.description}
+            url={"/blog/" + post.slug}
+            target="_self"
+            badge={post.data.badge}
+          />
+          <div class="divider my-0" />
+        </>
+      ))
+    }
   </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class='block lg:hidden'>
+    <div class="pb-12 mt-5">
+      <div class="text-xl py-1">Hey there 👋</div>
+      <div class="text-5xl font-bold">I'm Ilyes</div>
+      <div class="text-3xl py-3 font-bold">Software Developper and Freelancer</div>
+      <div class="py-2">
+        <text class="text-lg">
+          I am a Software Developper from Algeria, intrested in all that is related to Computers and Thechnologies, currently intrested in low-level and Embedded Systems
+        </text>
+      </div>
+      <div class="mt-8">
+        <a class="btn" href="https://twitter.com/pengu7501795280" target="_blank"> Let's connect!</a>
+      </div>
+    </div>
+  
+    <div>
+      <div class="text-3xl w-full font-bold mb-2">My last projects</div>
+    </div>
+  
+    <div class="flex flex-wrap">
+      <Card
+        title="SQLite Clone"
+        img="rsqlite.svg"
+        desc="a simple SQLite clone implemented in rust"
+        url="https://github.com/noot-noot-pengu/RSQLite"
+        badge="Terminal App"
+        tags={["Rust"]}
+      />
+      <div class="divider my-0"></div>
+      <Card
+        title="Torrent Client"
+        img="/torrent.svg"
+        desc="A torrent client implemented in Rust"
+        url="https://github.com/noot-noot-pengu/torrent"
+        badge="Terminal App"
+        tags={["Rust"]}
+      />
+      <div class="divider my-0"></div>
+      <Card
+        title="Classic Games"
+        img="/classic.png"
+        desc="nostalgic early 2000s computer games with svelte"
+        url="https://github.com/noot-noot-pengu/classic_games"
+        badge="Full-stack"
+        tags={["Svelte", "Tailwind"]}
+      />
+    </div>
+  
+    <div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    </div>
+    <div class="flex flex-wrap">
+  
+      {
+        last_posts.map((post) => (
+          <>
+            <Card
+              title={post.data.title}
+              img={post.data.heroImage}
+              desc={post.data.description}
+              url={"/blog/" + post.slug}
+              target="_self"
+              badge={post.data.badge}
+            />
+          </>
+        ))
+      }
+    </div>
+
   </div>
-
-  <HorizontalCard
-    title="SQLite Clone"
-    img="rsqlite.svg"
-    desc="a simple SQLite clone implemented in rust"
-    url="https://github.com/noot-noot-pengu/RSQLite"
-    badge="Terminal App"
-    tags={["Rust"]}
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Torrent Client"
-    img="/torrent.svg"
-    desc="A torrent client implemented in Rust"
-    url="https://github.com/noot-noot-pengu/torrent"
-    badge="Terminal App"
-    tags={["Rust"]}
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Classic Games"
-    img="/classic.png"
-    desc="nostalgic early 2000s computer games with svelte"
-    url="https://github.com/noot-noot-pengu/classic_games"
-    badge="Full-stack"
-    tags={["Svelte", "Tailwind"]}
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + post.slug}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
 </BaseLayout>
