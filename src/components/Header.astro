@@ -26,7 +26,7 @@
   const buttons = document.getElementsByClassName('change_theme_button');
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', e => {
-      console.log(buttons[i].dataset.setTheme)
+      localStorage.setItem("theme", buttons[i].dataset.setTheme)
       document.querySelector('html').setAttribute('data-theme', buttons[i].dataset.setTheme)
     });
   }

@@ -12,12 +12,10 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm Ilyes</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-3xl py-3 font-bold">Software Engineer and Freelancer</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        description here
       </text>
     </div>
     <div class="mt-8">
@@ -26,30 +24,34 @@ const last_posts = posts.slice(0, 3);
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">My last projects</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="SQLite Clone"
+    img="rsqlite.svg"
+    desc="a simple SQLite clone implemented in rust"
     url="#"
-    badge="NEW"
+    badge="Terminal App"
+    tags={["Rust"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Torrent Client"
+    img="/torrent.svg"
+    desc="A torrent client implemented in Rust"
     url="#"
+    badge="Terminal App"
+    tags={["Rust"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Classic Games"
+    img="/classic.png"
+    desc="nostalgic early 2000s computer games with svelte"
     url="#"
-    badge="FOSS"
+    badge="Full-stack"
+    tags={["Svelte", "Tailwind"]}
   />
 
   <div>

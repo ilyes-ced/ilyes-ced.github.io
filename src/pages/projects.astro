@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import Card from "../components/Card.astro";
 ---
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
@@ -10,18 +11,20 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
     title="SQLite Clone"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    img="rsqlite.svg"
+    desc="a simple SQLite clone implemented in rust"
     url="#"
-    badge="Rust"
+    badge="Terminal App"
+    tags={["Rust"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Torrent Client"
-    img="/slack.png"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    img="/torrent.svg"
+    desc="A torrent client implemented in Rust"
     url="#"
-    badge="Rust"
+    badge="Terminal App"
+    tags={["Rust"]}
   />
 
   <div>
@@ -31,25 +34,28 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   <HorizontalCard
     title="Slack Clone"
     img="/slack.png"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="slack clone with react and nodejs"
     url="#"
-    badge="React"
+    badge="Full-stack"
+    tags={["NodeJs", "React"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Classic Games"
     img="/classic.png"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="nostalgic early 2000s computer games with svelte"
     url="#"
-    badge="Svelte"
+    badge="Full-stack"
+    tags={["Svelte", "Tailwind"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
     title="ClickUp clone"
     img="/clickup.png"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="ClickUp clone with pure javascript and nodejs"
     url="#"
-    badge="NodeJs"
+    badge="Full-stack"
+    tags={["JavaScript", "NodeJs"]}
   />
 
   <div>
@@ -58,9 +64,51 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
     title="Messenger App"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    img="/flutter_app.svg"
+    desc="Frontend for a flutter messaging app"
     url="#"
-    badge="Flutter"
+    badge="Frontend"
+    tags={["Flutter"]}
   />
+
+
+  <!--
+
+    <div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Mobile Projects</div>
+    </div>  
+    
+    <div class="flex flex-wrap">
+      <Card
+      title="Messenger App"
+      img="/post_img.webp"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      url="#"
+      badge="Flutter"
+      />
+      <Card
+      title="Messenger App"
+      img="/post_img.webp"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      url="#"
+      badge="Flutter"
+    />
+    <Card
+      title="Messenger App"
+      img="/post_img.webp"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      url="#"
+      badge="Flutter"
+    />
+    <Card
+      title="Messenger App"
+      img="/post_img.webp"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      url="#"
+      badge="Flutter"
+    />
+  </div>
+    -->
+
+
 </BaseLayout>

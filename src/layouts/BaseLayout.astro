@@ -7,10 +7,20 @@ import SideBar from "../components/SideBar.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true, sideBarActiveItemID } = Astro.props;
+
+let theme = "luxury"
+
 ---
 
+<script>
+  if (localStorage.getItem("theme")) {
+    document.querySelector('html').setAttribute('data-theme', localStorage.getItem("theme"))
+  }
+</script>
+
+
 <!DOCTYPE html>
-<html lang="en" data-theme="luxury">
+<html lang="en" data-theme={theme}>
   <head>
     <BaseHead title={title} description={description} image={image} />
   </head>

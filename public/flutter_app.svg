@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="1200"
+   height="1200"
+   viewBox="-1 0 339 339"
+   version="1.1"
+   id="svg60"
+   sodipodi:docname="flutter_app.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview62"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="0.52"
+     inkscape:cx="-153.84615"
+     inkscape:cy="700"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg60" />
+  <defs
+     id="defs54">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient954">
+      <stop
+         style="stop-color:#1d1d35;stop-opacity:1;"
+         offset="0"
+         id="stop950" />
+      <stop
+         style="stop-color:#00bf6d;stop-opacity:1;"
+         offset="1"
+         id="stop952" />
+    </linearGradient>
+    <linearGradient
+       id="a"
+       y1="0.067600004"
+       x2="0.5"
+       x1="0.5"
+       y2="0.95599997">
+      <stop
+         stop-color="#00C6FF"
+         offset="0"
+         id="stop49"
+         style="stop-color:#ff00d1;stop-opacity:1;" />
+      <stop
+         stop-color="#0068FF"
+         offset="1"
+         id="stop51"
+         style="stop-color:#1875ff;stop-opacity:1;" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient954"
+       id="radialGradient956"
+       cx="42.187847"
+       cy="222.62961"
+       fx="42.187847"
+       fy="222.62961"
+       r="112"
+       gradientTransform="matrix(1.2284911,0.00862383,-0.0105841,1.4848455,66.202333,-78.37212)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <path
+     fill="url(#a)"
+     d="M 114.96751,224.0626 V 254.25 l 28.44346,-16.04738 c 7.92867,2.26781 16.35675,3.49182 25.08903,3.49182 46.80924,0 84.75,-35.13603 84.75,-78.47222 0,-43.33919 -37.94076,-78.47222 -84.75,-78.47222 -46.80621,0 -84.75,35.13303 -84.75,78.47222 0,24.54041 12.166165,46.45255 31.21751,60.84038 z"
+     id="path56"
+     style="fill:url(#radialGradient956);fill-opacity:1;stroke-width:0.753808" />
+  <path
+     fill="#ffffff"
+     d="M 161.73508,141.25 126.125,183.625 158.53317,163.64079 175.46596,183.625 210.875,141.25 178.82646,160.88435 Z"
+     id="path58"
+     style="stroke-width:0.625018" />
+</svg>
