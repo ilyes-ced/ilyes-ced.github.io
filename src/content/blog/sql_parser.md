@@ -1,8 +1,8 @@
 ---
 title: "SQL tokenizer and parser"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 12 2022"
-heroImage: "/post_img.webp"
+description: "Howw SQL tokenizes and parses queries"
+pubDate: "Jun 20 2023"
+heroImage: "/tokenize_parse.svg"
 badge: "Rust"
 ---
 

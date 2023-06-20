@@ -1,8 +1,9 @@
 ---
 title: "Bencode encoder/decoder"
-description: "test desc"
-pubDate: "Sep 15 2022"
-heroImage: "/post_img.webp"
+description: "Bencode encoder/decoder implemented in Rust"
+pubDate: "Jun 20 2023"
+heroImage: "/bencode.svg"
+badge: "Rust"
 ---
 
 

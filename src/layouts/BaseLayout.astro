@@ -8,19 +8,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true, sideBarActiveItemID } = Astro.props;
 
-let theme = "luxury"
+let theme = ""
 
 ---
 
 <script>
   if (localStorage.getItem("theme")) {
-    document.querySelector('html').setAttribute('data-theme', localStorage.getItem("theme"))
+    document.querySelector('html')?.setAttribute('data-theme', localStorage.getItem("theme") || "luxury")
   }
 </script>
 
 
 <!DOCTYPE html>
-<html lang="en" data-theme={theme}>
+<html lang="en" data-theme="luxury">
   <head>
     <BaseHead title={title} description={description} image={image} />
   </head>
