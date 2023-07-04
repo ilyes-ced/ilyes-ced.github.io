@@ -8,9 +8,11 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <div class="text-3xl w-full font-bold">Profile</div>
   </div>
 
-  <div class="mb-10 text-justify">
+  <div class=" text-justify">
     I am a Software Developper from Algeria, intrested in all that is related to Computers and Thechnologies, currently intrested in low-level and Embedded Systems
   </div>
+
+  <a href="/resume.pdf" class='btn my-10'>Download CV</a>
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Education</div>
@@ -76,10 +78,19 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="solo dev"
-      subtitle="From Aug 2022 to Current as a Solo Dev"
+      title="Self Employed"
+      subtitle="From Aug 2022 to Current"
     >
-      solo projects.
+      <ul class="list-disc pl-4">
+        <li>developed various full-stack web applications in Laravel, React, Svelte and nodejs</li>
+        <li>developed some Backend and terminal apps in Rust</li>
+        <li>developed desktop applications with Python(PyQt) and Java(JavaFX)</li>
+        <li>developed a moblie app with flutter</li>
+      </ul>
+    
+  
+    
+
     </TimeLineElement>
 
     <!--
