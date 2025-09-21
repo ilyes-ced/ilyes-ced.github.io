@@ -123,28 +123,31 @@ export default function Window(props: any) {
       {/* Title Bar */}
       <div
         id="titlebar"
-        class="bg-red-400 flex flex-row justify-between cursor-move p-2"
+        class="bg-red-400 flex flex-row justify-between cursor-move "
         onMouseDown={onTitleMouseDown}
+        onDblClick={() => console.log("maximize window double click titlebar")}
       >
-        <div id="title">{props.name}</div>
+        <div id="title" class="p-2 font-bold">
+          {props.name}
+        </div>
         <div id="window_buttons" class="flex flex-row space-x-2">
           <div
             id="minimize"
-            class="cursor-pointer hover:bg-min aspect-square h-full flex items-center justify-center"
+            class="cursor-pointer hover:bg-yellow aspect-square h-full flex items-center justify-center"
           >
             <FaRegularWindowMinimize />
           </div>
           <div
             id="maximize"
-            class="cursor-pointer hover:bg-max aspect-square h-full flex items-center justify-center"
+            class="cursor-pointer hover:bg-green aspect-square h-full flex items-center justify-center"
           >
             <FaRegularWindowMaximize />
           </div>
           <div
             id="close"
-            class="cursor-pointer hover:bg-close aspect-square h-full flex items-center justify-center"
+            class="cursor-pointer hover:bg-red aspect-square h-full flex items-center justify-center"
           >
-            <IoCloseSharp />
+            <IoCloseSharp size={24} />
           </div>
         </div>
       </div>

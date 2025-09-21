@@ -27,6 +27,7 @@ html {
   font-family: "Times New Roman", Times, serif;
   color: var(--color-foreground);
   background-color: var(--color-background);
+  overflow: hidden;
 }
 
 body,
