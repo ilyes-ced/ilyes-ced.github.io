@@ -1,10 +1,17 @@
+import Terminal from "./apps/Terminal";
 import Window from "./Window";
+
+// in store: activeApps
+const App = {
+  name: "terminal",
+  component: <Terminal></Terminal>,
+};
 
 export default function Desktop() {
   return (
-    <div class="bg-green-500 h-full">
+    <div class="h-full">
       desktop
-      <Window />
+      <Window name={App.name}>{App.component}</Window>
     </div>
   );
 }

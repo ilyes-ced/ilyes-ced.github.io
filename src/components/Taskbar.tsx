@@ -1,6 +1,6 @@
 export default function Taskbar() {
   return (
-    <div class="bg-blue-500 h-10 flex flex-row">
+    <div class="bg-[#ffffff10] h-10 flex flex-row backdrop-blur-md">
       <button class="bg-red-400 h-full p-4 flex items-center min-w-fit">
         start
       </button>
@@ -9,8 +9,9 @@ export default function Taskbar() {
           app name
         </div>
       </div>
-      <div class="bg-red-400 h-full p-4 flex items-center min-w-fit">
-        yyyy-mm-dd hh:ss
+      <div class="h-full text-xs text-foreground flex flex-col px-4 items-center justify-center min-w-fit">
+        <div>hh:ss</div>
+        <div>yyyy/mm/dd</div>
       </div>
     </div>
   );
