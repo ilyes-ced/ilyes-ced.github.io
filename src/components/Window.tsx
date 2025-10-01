@@ -5,6 +5,7 @@ import {
   FaRegularWindowMaximize,
 } from "solid-icons/fa";
 import { IoCloseSharp } from "solid-icons/io";
+import { setStore, store, toggleMinMax } from "../store";
 
 export default function Window(props: any) {
   // Position and size signals
@@ -110,49 +111,74 @@ export default function Window(props: any) {
 
   return (
     <div
+      onClick={() => setStore("focusedApp", props.app.name)}
       ref={windowRef}
-      class="window flex flex-col w-[1000px] h-[800px] absolute border overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent"
+      class="window flex flex-col w-[1000px] h-[800px] absolute border border-gray-900 overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent rounded-xl bg-black/90 backdrop-blur-3xl "
       style={{
-        width: `${size().w}px`,
-        height: `${size().h}px`,
-        left: `${pos().x}px`,
-        top: `${pos().y}px`,
+        width: props.app.windowState.max ? "100%" : `${size().w}px`,
+        height: props.app.windowState.max ? "100%" : `${size().h}px`,
+        left: props.app.windowState.max ? "0px" : `${pos().x}px`,
+        top: props.app.windowState.max ? "0px" : `${pos().y}px`,
         position: "absolute",
+        "z-index": store.focusedApp === props.app.name ? "10" : "",
+      }}
+      classList={{
+        "opacity-0 pointer-events-none": props.app.windowState.min,
       }}
     >
       {/* Title Bar */}
       <div
         id="titlebar"
-        class="bg-red-400 flex flex-row justify-between cursor-move "
+        class="flex flex-row justify-between cursor-move px-2 border-b border-gray-900  "
         onMouseDown={onTitleMouseDown}
         onDblClick={() => console.log("maximize window double click titlebar")}
       >
-        <div id="title" class="p-2 font-bold">
-          {props.name}
+        <div id="title" class="p-2 font-bold ">
+          {props.app.name}
         </div>
-        <div id="window_buttons" class="flex flex-row space-x-2">
+        <div id="window_buttons" class="flex flex-row space-x-2 items-center">
           <div
             id="minimize"
-            class="cursor-pointer hover:bg-yellow aspect-square h-full flex items-center justify-center"
+            onClick={() => toggleMinMax(props.app.name, "min")}
+            class="group/min cursor-pointer rounded bg-blue-300 aspect-4/1 h-6 flex items-center justify-center"
           >
-            <FaRegularWindowMinimize />
+            <FaRegularWindowMinimize
+              class="opacity-0 group-hover/min:opacity-100 
+           pointer-events-none group-hover/min:pointer-events-auto 
+           transition-all duration-200 ease-in-out"
+            />
           </div>
           <div
             id="maximize"
-            class="cursor-pointer hover:bg-green aspect-square h-full flex items-center justify-center"
+            onClick={() => toggleMinMax(props.app.name, "max")}
+            class="group/max cursor-pointer rounded bg-blue-600 aspect-4/1 h-6 flex items-center justify-center"
           >
-            <FaRegularWindowMaximize />
+            <FaRegularWindowMaximize
+              class="opacity-0 group-hover/max:opacity-100 
+           pointer-events-none group-hover/max:pointer-events-auto 
+           transition-all duration-200 ease-in-out"
+            />
           </div>
           <div
             id="close"
-            class="cursor-pointer hover:bg-red aspect-square h-full flex items-center justify-center"
+            onClick={() => {
+              setStore("activeApps", (apps) =>
+                apps.filter((app) => app.name !== props.app.name)
+              );
+            }}
+            class="group/close cursor-pointer rounded bg-blue-900 aspect-4/1 h-6 flex items-center justify-center"
           >
-            <IoCloseSharp size={24} />
+            <IoCloseSharp
+              class="opacity-0 group-hover/close:opacity-100 
+           pointer-events-none group-hover/close:pointer-events-auto 
+           transition-all duration-200 ease-in-out"
+              size={24}
+            />
           </div>
         </div>
       </div>
 
-      <div id="content" class="bg-blue-400 flex-grow h-max text-black ">
+      <div id="content" class="flex-grow h-max text-black ">
         {props.children}
       </div>
 

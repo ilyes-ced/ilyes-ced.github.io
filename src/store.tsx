@@ -1,16 +1,28 @@
 import { createStore } from "solid-js/store";
+import { Apps, AppType } from "./components/Apps";
 
 //? all apps names here
-type appsType = "terminal" | "gui";
 
 interface GlobalStore {
-  activeApp: appsType;
-  activeApps: appsType[];
+  activeApps: AppType[];
+  taskbarPinnedApps: AppType[];
+  focusedApp: string; // names of apps
 }
 
 const [store, setStore] = createStore<GlobalStore>({
-  activeApps: ["terminal", "gui"],
-  activeApp: "terminal",
+  //, "gui"
+  activeApps: Apps.slice(0, -1),
+  taskbarPinnedApps: Apps,
+  focusedApp: "terminal",
 });
 
-export { store, setStore };
+function toggleMinMax(appName: string, minMax: "max" | "min") {
+  const index = store.activeApps.findIndex((app) => app.name === appName);
+
+  if (index !== -1) {
+    const current = store.activeApps[index].windowState[minMax];
+    setStore("activeApps", index, "windowState", minMax, !current);
+  }
+}
+
+export { store, setStore, toggleMinMax };

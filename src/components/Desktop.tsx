@@ -14,24 +14,16 @@ export default function Desktop() {
       <DesktopIcon name="App 1" x={0} y={0} />
       <DesktopIcon name="App 2" x={100} y={0} />
       <DesktopIcon name="App 3" x={0} y={100} />
+      <DesktopIcon
+        name="GUI Portfolio"
+        icon={<Gui></Gui>}
+        x={200}
+        y={0}
+        onDblClick={() => {}}
+      />
 
       <For each={store.activeApps}>
-        {(activeApp) => {
-          const app = Apps.find((app) => app.name === activeApp);
-          return app ? (
-            <>
-              <Window name={app.name}>{app.component}</Window>
-
-              <DesktopIcon
-                name="GUI Portfolio"
-                icon={app.icon}
-                x={200}
-                y={0}
-                onDblClick={() => {}}
-              />
-            </>
-          ) : null;
-        }}
+        {(activeApp) => <Window app={activeApp}>{activeApp.component}</Window>}
       </For>
     </div>
   );

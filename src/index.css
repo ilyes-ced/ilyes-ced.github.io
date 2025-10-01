@@ -83,4 +83,5 @@ body,
   overflow: scroll;
   scrollbar-color: var(--color-orange) transparent;
   scrollbar-width: thin;
+  transition: all 0.15s cubic-bezier(0.33, 1, 0.68, 1);
 }

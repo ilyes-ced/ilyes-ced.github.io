@@ -184,8 +184,7 @@ export default function Terminal() {
   return (
     <div
       id="terminal"
-      classList={{ "z-50": store.activeApp === "terminal" }}
-      class="bg-background text-foreground font-mono text-sm sm:text-base p-8 h-full overflow-scroll tracking-wide leading-relaxed "
+      class=" text-foreground font-mono text-sm sm:text-base p-8 h-full overflow-scroll tracking-wide leading-relaxed "
       onClick={() => inputRef?.focus()}
     >
       <For each={lines()}>
