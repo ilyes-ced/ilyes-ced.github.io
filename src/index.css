@@ -49,12 +49,13 @@ body,
   --color-mint-500: oklch(0.72 0.9 200);
   --color-background: oklch(0.141 0.005 285.823);
   --color-foreground: oklch(0.985 0 0);
+  --color-border: oklch(21% 0.034 264.665);
 
   --color-orange: oklch(0.646 0.222 41.116);
   --color-blue: oklch(0.488 0.243 264.376);
   --color-green: oklch(0.696 0.17 162.48);
   --color-yellow: oklch(0.769 0.188 70.08);
-  --color-pruple: oklch(0.627 0.265 303.9);
+  --color-purple: oklch(0.627 0.265 303.9);
   --color-red: oklch(0.645 0.246 16.439);
 
   --color-min: oklch(0.985 1 0);
@@ -80,8 +81,10 @@ body,
 }
 
 .window {
+  transition: all 0.15s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.windowScoll {
   overflow: scroll;
   scrollbar-color: var(--color-orange) transparent;
   scrollbar-width: thin;
-  transition: all 0.15s cubic-bezier(0.33, 1, 0.68, 1);
 }

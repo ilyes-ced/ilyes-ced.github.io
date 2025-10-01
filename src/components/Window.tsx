@@ -113,7 +113,7 @@ export default function Window(props: any) {
     <div
       onClick={() => setStore("focusedApp", props.app.name)}
       ref={windowRef}
-      class="window flex flex-col w-[1000px] h-[800px] absolute border border-gray-900 overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent rounded-xl bg-black/90 backdrop-blur-3xl "
+      class="window flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent rounded-xl bg-black/90 backdrop-blur-3xl "
       style={{
         width: props.app.windowState.max ? "100%" : `${size().w}px`,
         height: props.app.windowState.max ? "100%" : `${size().h}px`,
@@ -129,9 +129,9 @@ export default function Window(props: any) {
       {/* Title Bar */}
       <div
         id="titlebar"
-        class="flex flex-row justify-between cursor-move px-2 border-b border-gray-900  "
+        class="flex flex-row justify-between cursor-move px-2 border-b border-border"
         onMouseDown={onTitleMouseDown}
-        onDblClick={() => console.log("maximize window double click titlebar")}
+        onDblClick={() => toggleMinMax(props.app.name, "max")}
       >
         <div id="title" class="p-2 font-bold ">
           {props.app.name}
@@ -178,7 +178,7 @@ export default function Window(props: any) {
         </div>
       </div>
 
-      <div id="content" class="flex-grow h-max text-black ">
+      <div id="content" class="windowScoll flex-grow h-max text-black ">
         {props.children}
       </div>
 

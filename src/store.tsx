@@ -13,7 +13,7 @@ const [store, setStore] = createStore<GlobalStore>({
   //, "gui"
   activeApps: Apps.slice(0, -1),
   taskbarPinnedApps: Apps,
-  focusedApp: "terminal",
+  focusedApp: "gui",
 });
 
 function toggleMinMax(appName: string, minMax: "max" | "min") {
