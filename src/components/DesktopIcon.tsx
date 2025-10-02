@@ -1,5 +1,7 @@
 // DesktopIcon.tsx
 import { createSignal, onCleanup, onMount } from "solid-js";
+import { setStore, store, toggleMinMax } from "../store";
+import { Apps } from "./Apps";
 
 export default function DesktopIcon(props: any) {
   const gridSize = 100;
@@ -58,20 +60,29 @@ export default function DesktopIcon(props: any) {
   return (
     <div
       ref={iconRef}
-      class="absolute cursor-pointer flex flex-col items-center size-16 hover:border"
+      class="absolute cursor-pointer flex flex-col items-center h-fit border border-transparent hover:border-border hover:bg-blue-300/10 p-2 rounded-md size-18"
       style={{
         left: `${pos().x + 20}px`,
         top: `${pos().y + 20}px`,
         "user-select": "none",
       }}
       onMouseDown={onMouseDown}
+      onDblClick={() => {
+        if (!store.activeApps.includes(props)) {
+          setStore("activeApps", (apps) => [
+            ...apps,
+            Apps.find((app) => app.name === props.name),
+          ]);
+          setStore("focusedApp", props.name);
+        }
+      }}
     >
       <img
         src={props.icon}
-        class="w-full aspect-square select-none"
+        class="size-12 aspect-square select-none"
         draggable="false"
       />
-      <div class="text-xs text-center">
+      <div class="text-lg text-center">
         {props.name}
         {props}
       </div>

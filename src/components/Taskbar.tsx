@@ -2,6 +2,8 @@ import { For, Match, Show, Switch } from "solid-js";
 import { setStore, store, toggleMinMax } from "../store";
 import { Apps } from "./Apps";
 import { createSignal, onCleanup, onMount } from "solid-js";
+import StartMenu from "./startMenu";
+import { FaSolidChevronUp } from "solid-icons/fa";
 
 export default function Taskbar() {
   const [time, setTime] = createSignal(new Date());
@@ -35,15 +37,36 @@ export default function Taskbar() {
   };
 
   return (
-    <div class="bg-[#ffffff10] h-12 flex flex-row backdrop-blur-md">
-      <button class="cursor-pointer h-full p-4 flex items-center hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out ">
-        <img src="../../src/assets/arch.png" alt="" class="size-8" />
+    <div class="bg-[#ffffff10] h-12 flex flex-row backdrop-blur-md px-4 py-0.5 space-x-2 z-50">
+      <button
+        id="startButton"
+        onClick={() => setStore("showStartMenu", !store.showStartMenu)}
+        class="cursor-pointer h-full w-fit p-2 flex items-center hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm"
+      >
+        <img
+          src="../../src/assets/arch.png"
+          alt=""
+          class="w-10 aspect-square "
+        />
       </button>
-      <div class="flex items-center w-full">
+      <Show when={store.showStartMenu}>
+        <div class="absolute bottom-14 left-4">
+          <StartMenu />
+        </div>
+      </Show>
+
+      <div class="self-center">
+        <input
+          type="text"
+          class="bg-background/50 py-2 px-4 rounded-full"
+          placeholder="Search"
+        />
+      </div>
+      <div class="flex items-center w-full space-x-1">
         <For each={store.taskbarPinnedApps}>
           {(taskbarApp) => (
             <div
-              class="flex flex-col items-center justify-center h-full min-w-fit p-2 aspect-square cursor-pointer hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out"
+              class="flex flex-col items-center justify-center h-full min-w-fit p-1 aspect-square cursor-pointer hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm"
               onClick={() => {
                 if (store.activeApps.includes(taskbarApp)) {
                   if (store.focusedApp === taskbarApp.name) {
@@ -58,7 +81,7 @@ export default function Taskbar() {
                 }
               }}
             >
-              <img src={taskbarApp.icon} alt="" class="size-full" />
+              <img src={taskbarApp.icon} alt="" class="size-full " />
 
               <div
                 class="transition-all duration-200 ease-in-out rounded py-[2px] px-2"
@@ -72,6 +95,41 @@ export default function Taskbar() {
           )}
         </For>
       </div>
+
+      <div
+        id="langMenuToggle"
+        onClick={() => setStore("showLangMenu", !store.showLangMenu)}
+        class="h-full text-xs text-foreground flex px-4 items-center justify-center min-w-fit space-x-2  cursor-pointer  w-fit p-2  hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm"
+      >
+        <FaSolidChevronUp />
+        <p>{store.lang}</p>
+      </div>
+      <Show when={store.showLangMenu}>
+        <div
+          id="langMenu"
+          class="absolute bottom-14 right-15 flex flex-col border border-border overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent rounded-xl bg-black/50 backdrop-blur-3xl p-4"
+        >
+          <div
+            class="px-8 py-2 rounded-lg cursor-pointer hover:bg-black/50"
+            onClick={() => {
+              setStore("lang", "Fr");
+              setStore("showLangMenu", false);
+            }}
+          >
+            Fr
+          </div>
+          <div
+            class="px-8 py-2 rounded-lg cursor-pointer hover:bg-black/50"
+            onClick={() => {
+              setStore("lang", "En");
+              setStore("showLangMenu", false);
+            }}
+          >
+            En
+          </div>
+        </div>
+      </Show>
+
       <div class="h-full text-xs text-foreground flex flex-col px-4 items-center justify-center min-w-fit">
         <div>{formatTime()}</div>
         <div>{formatDate()}</div>

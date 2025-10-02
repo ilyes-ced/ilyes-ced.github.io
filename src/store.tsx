@@ -7,6 +7,9 @@ interface GlobalStore {
   activeApps: AppType[];
   taskbarPinnedApps: AppType[];
   focusedApp: string; // names of apps
+  showStartMenu: boolean;
+  showLangMenu: boolean;
+  lang: "En" | "Fr";
 }
 
 const [store, setStore] = createStore<GlobalStore>({
@@ -14,6 +17,9 @@ const [store, setStore] = createStore<GlobalStore>({
   activeApps: Apps.slice(0, -1),
   taskbarPinnedApps: Apps,
   focusedApp: "gui",
+  showStartMenu: false,
+  showLangMenu: false,
+  lang: "En",
 });
 
 function toggleMinMax(appName: string, minMax: "max" | "min") {

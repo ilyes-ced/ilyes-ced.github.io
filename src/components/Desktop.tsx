@@ -11,16 +11,25 @@ import { Apps } from "./Apps";
 export default function Desktop() {
   return (
     <div class="h-full relative">
-      <DesktopIcon name="App 1" x={0} y={0} />
-      <DesktopIcon name="App 2" x={100} y={0} />
-      <DesktopIcon name="App 3" x={0} y={100} />
-      <DesktopIcon
-        name="GUI Portfolio"
-        icon={<Gui></Gui>}
-        x={200}
-        y={0}
-        onDblClick={() => {}}
-      />
+      <For each={Apps}>
+        {(activeApp, index) => {
+          const i = index(); // current index
+          const x = (i % 10) * 100; // column index * 100
+          const y = Math.floor(i / 10) * 100; // row index * 100
+
+          return (
+            <DesktopIcon
+              name={activeApp.name}
+              icon={activeApp.icon}
+              x={x}
+              y={y}
+              onDblClick={() => {
+                console.log("================================");
+              }}
+            />
+          );
+        }}
+      </For>
 
       <For each={store.activeApps}>
         {(activeApp) => <Window app={activeApp}>{activeApp.component}</Window>}
