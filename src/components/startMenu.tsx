@@ -1,6 +1,7 @@
 import { AiOutlinePoweroff } from "solid-icons/ai";
 import { store } from "../store";
 import { createEffect, For } from "solid-js";
+import { Apps } from "./Apps";
 
 export default function () {
   let inputRef!: HTMLInputElement;
@@ -50,17 +51,17 @@ export default function () {
         {/* maybe better to remove not sure */}
         <p class="pb-2">Recommended</p>
         <div class="w-full h-full grid grid-cols-2 gap-4">
-          <For each={store.activeApps}>
-            {(activeApp, index) => {
+          <For each={Apps}>
+            {(app, index) => {
               return (
                 <div class="cursor-pointer flex flex-row items-center h-fit border border-transparent hover:bg-blue-300/10 p-2 rounded-md  space-x-4">
                   <img
-                    src={activeApp.icon}
+                    src={app.icon}
                     class="size-12 aspect-square select-none"
                     draggable="false"
                   />
                   <div class="flex flex-col">
-                    <div class="text-md">{activeApp.name}</div>
+                    <div class="text-md">{app.name}</div>
                     <div class="text-md font-light">description</div>
                   </div>
                 </div>

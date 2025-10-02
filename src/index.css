@@ -85,6 +85,6 @@ body,
 }
 .windowScoll {
   overflow: scroll;
-  scrollbar-color: var(--color-orange) transparent;
+  scrollbar-color: #1c398e transparent;
   scrollbar-width: thin;
 }

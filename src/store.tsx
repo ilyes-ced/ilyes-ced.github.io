@@ -10,16 +10,18 @@ interface GlobalStore {
   showStartMenu: boolean;
   showLangMenu: boolean;
   lang: "En" | "Fr";
+  wallpaper: string;
 }
 
 const [store, setStore] = createStore<GlobalStore>({
   //, "gui"
-  activeApps: Apps.slice(0, -1),
+  activeApps: [Apps[3]],
   taskbarPinnedApps: Apps,
   focusedApp: "gui",
   showStartMenu: false,
   showLangMenu: false,
   lang: "En",
+  wallpaper: "/src/assets/wallpapers/win11_3.jpg",
 });
 
 function toggleMinMax(appName: string, minMax: "max" | "min") {

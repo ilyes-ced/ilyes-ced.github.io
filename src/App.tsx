@@ -1,7 +1,6 @@
 import Taskbar from "./components/Taskbar";
 import Desktop from "./components/Desktop";
-import wallpaper from "/src/assets/win11_wallpaper.jpg";
-import { setStore } from "./store";
+import { setStore, store } from "./store";
 
 export default function App() {
   return (
@@ -14,7 +13,7 @@ export default function App() {
         }
       }}
       class="size-full flex flex-col bg-cover bg-center"
-      style={{ "background-image": `url(${wallpaper})` }}
+      style={{ "background-image": `url(${store.wallpaper})` }}
     >
       <Desktop />
       <Taskbar />

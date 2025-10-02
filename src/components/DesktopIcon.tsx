@@ -68,6 +68,7 @@ export default function DesktopIcon(props: any) {
       }}
       onMouseDown={onMouseDown}
       onDblClick={() => {
+        //TODO: fix this duplicates
         if (!store.activeApps.includes(props)) {
           setStore("activeApps", (apps) => [
             ...apps,

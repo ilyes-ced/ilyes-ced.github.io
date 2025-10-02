@@ -2,9 +2,11 @@ import { JSX } from "solid-js/jsx-runtime";
 import Gui from "./apps/Gui";
 import Terminal from "./apps/Terminal";
 import TerminalIcon from "/src/assets/Windows_Terminal.svg";
+import TetrisIcon from "/src/assets/tetris.png";
 import GuiIcon from "/src/assets/gui.png";
 import Wallpapers from "./apps/Wallpapers";
 import Tetris from "./apps/Tetris";
+import WallpaperIcon from "/src/assets/wallpaper.png";
 
 interface AppType {
   name: string;
@@ -42,7 +44,7 @@ const Apps: AppType[] = [
     name: "tetris",
     description: "",
     component: <Tetris></Tetris>,
-    icon: TerminalIcon,
+    icon: TetrisIcon,
     windowState: {
       min: false,
       max: false,
@@ -52,7 +54,7 @@ const Apps: AppType[] = [
     name: "wallpapers",
     description: "",
     component: <Wallpapers></Wallpapers>,
-    icon: TerminalIcon,
+    icon: WallpaperIcon,
     windowState: {
       min: false,
       max: false,

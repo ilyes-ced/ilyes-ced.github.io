@@ -113,7 +113,7 @@ export default function Window(props: any) {
     <div
       onClick={() => setStore("focusedApp", props.app.name)}
       ref={windowRef}
-      class="window flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent rounded-xl bg-black/90 backdrop-blur-3xl "
+      class="window flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent rounded-xl bg-black/75 backdrop-blur-3xl "
       style={{
         width: props.app.windowState.max ? "100%" : `${size().w}px`,
         height: props.app.windowState.max ? "100%" : `${size().h}px`,
