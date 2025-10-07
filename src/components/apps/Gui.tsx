@@ -1,19 +1,19 @@
 import { For } from "solid-js";
-import AboutMe from "./gui/AboutMe";
+import AboutMe from "./gui/Home";
 import Projects from "./gui/Projects";
-import Skills from "./gui/Skills";
+import Experience from "./gui/Exp";
 import Resume from "./gui/Resume";
 import Socials from "./gui/Socials";
 import Education from "./gui/Education";
 
 const pages = [
-  { name: "About Me", content: () => <AboutMe /> }, // education and experience and resume here
+  { name: "Home", content: () => <AboutMe /> }, // education and experience and resume here
   // { name: "github", content: () => <Projects /> }, // put github url in projects and solcials
   { name: "Projects", content: () => <Projects /> },
   // { name: "education", content: () => <Education /> },
-  { name: "Skills", content: () => <Projects /> },
+  { name: "Experience", content: () => <Experience /> },
   // { name: "resume", content: () => <Projects /> },
-  { name: "Socials", content: () => <Socials /> },
+  { name: "Contact Me", content: () => <Socials /> },
 ];
 
 import { createSignal } from "solid-js";

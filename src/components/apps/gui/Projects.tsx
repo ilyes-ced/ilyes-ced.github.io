@@ -245,16 +245,16 @@ const BrainfuckCard = () => {
       target="_blank"
       class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">Brainfuck Interpreter</div>
+      <div class="text-3xl font-bold">Brainf*ck Interpreter</div>
       <div class="text-sm font-light">
-        A minimal Brainfuck language interpreter written in C
+        A minimal Brainf*ck language interpreter written in C
       </div>
 
       <div class="">
-        A lightweight and efficient interpreter for the esoteric Brainfuck
+        A lightweight and efficient interpreter for the esoteric Brainf*ck
         programming language, written from scratch in C.
         <ul class="list-disc list-inside pl-4 mt-1">
-          <li>Parses and executes Brainfuck commands</li>
+          <li>Parses and executes Brainf*ck commands</li>
           <li>Memory tape and pointer simulation</li>
           <li>Simple CLI interface</li>
         </ul>

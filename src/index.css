@@ -88,3 +88,13 @@ body,
   scrollbar-color: #1c398e transparent;
   scrollbar-width: thin;
 }
+
+.bg-fill {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+.group:hover .bg-fill {
+  transform: scaleX(1);
+}
