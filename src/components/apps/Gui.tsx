@@ -4,18 +4,19 @@ import Projects from "./gui/Projects";
 import Skills from "./gui/Skills";
 import Resume from "./gui/Resume";
 import Socials from "./gui/Socials";
+import Education from "./gui/Education";
 
 const pages = [
-  { name: "aboutMe", content: () => <AboutMe /> },
+  { name: "About Me", content: () => <AboutMe /> }, // education and experience and resume here
   // { name: "github", content: () => <Projects /> }, // put github url in projects and solcials
-  { name: "projects", content: () => <Projects /> },
-  { name: "education", content: () => <Projects /> },
-  { name: "skills", content: () => <Projects /> },
-  { name: "resume", content: () => <Projects /> },
-  { name: "contact", content: () => <Projects /> },
+  { name: "Projects", content: () => <Projects /> },
+  // { name: "education", content: () => <Education /> },
+  { name: "Skills", content: () => <Projects /> },
+  // { name: "resume", content: () => <Projects /> },
+  { name: "Socials", content: () => <Socials /> },
 ];
 
-import { createSignal, onCleanup, onMount } from "solid-js";
+import { createSignal } from "solid-js";
 
 export default function FileExplorer() {
   const [activePage, setActivePage] = createSignal(0);
