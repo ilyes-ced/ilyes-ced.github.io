@@ -15,13 +15,13 @@ export default function () {
   return (
     <div
       id="startMenu"
-      class="w-[500px]  flex flex-col border border-border overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent rounded-xl bg-black/50 backdrop-blur-3xl"
+      class="w-[800px]  flex flex-col border border-border overflow-y-auto rounded-xl bg-black/50"
     >
       <div class="p-8">
         <input
           ref={inputRef}
           type="text"
-          class="w-full border-b-4 border-blue-600 bg-background px-4 py-1 rounded-t-sm"
+          class="w-full border-b-4 border-blue-600 bg-background/40 px-4 py-1 rounded-t-sm focus:outline-0"
           placeholder="Search"
         />
       </div>
@@ -29,14 +29,14 @@ export default function () {
       <div class="p-8">
         <p class="pb-2">Apps Menu</p>
 
-        <div class="w-full h-full grid grid-cols-5 gap-4">
-          <For each={store.activeApps}>
+        <div class="w-full h-full grid grid-cols-8 gap-4">
+          <For each={Apps}>
             {(activeApp, index) => {
               return (
                 <div class="cursor-pointer flex flex-col items-center h-fit border border-transparent hover:bg-blue-300/10 p-2 rounded-md ">
                   <img
                     src={activeApp.icon}
-                    class="size-12 aspect-square select-none"
+                    class="size-8 aspect-square select-none"
                     draggable="false"
                   />
                   <div class="text-md text-center">{activeApp.name}</div>
@@ -51,18 +51,20 @@ export default function () {
         {/* maybe better to remove not sure */}
         <p class="pb-2">Recommended</p>
         <div class="w-full h-full grid grid-cols-2 gap-4">
-          <For each={Apps}>
+          <For each={Apps.slice(0, 6)}>
             {(app, index) => {
               return (
                 <div class="cursor-pointer flex flex-row items-center h-fit border border-transparent hover:bg-blue-300/10 p-2 rounded-md  space-x-4">
                   <img
                     src={app.icon}
-                    class="size-12 aspect-square select-none"
+                    class="size-8 aspect-square select-none"
                     draggable="false"
                   />
                   <div class="flex flex-col">
                     <div class="text-md">{app.name}</div>
-                    <div class="text-md font-light">description</div>
+                    <div class="text-md font-light overflow-visible">
+                      {app.description}
+                    </div>
                   </div>
                 </div>
               );
@@ -74,7 +76,7 @@ export default function () {
       <div class="px-8 py-4 border-t-1 border-border flex justify-between items-center">
         <div class="flex space-x-4 items-center">
           <img
-            class="w-10 h-10 rounded-full border border-border bg-background"
+            class="size-10 rounded-full border border-border bg-background"
             src="../../src/assets/arch.png"
             alt="Rounded avatar"
           />

@@ -27,9 +27,9 @@ export default function FileExplorer() {
         <For each={pages}>
           {(page, index) => (
             <div
-              class="rounded-t-lg border border-b-0 border-border py-2 px-4 flex justify-center items-center cursor-pointer"
+              class="rounded-t-lg border hover:border-red border-b-0 border-border py-2 px-4 flex justify-center items-center cursor-pointer"
               classList={{
-                "bg-red": index() === activePage(),
+                "bg-red/75 border-red": index() === activePage(),
                 "hover:bg-red/50": !(index() === activePage()),
               }}
               onClick={() => setActivePage(index())}

@@ -4,6 +4,7 @@ import { Apps } from "./Apps";
 import { createSignal, onCleanup, onMount } from "solid-js";
 import StartMenu from "./startMenu";
 import { FaSolidChevronUp } from "solid-icons/fa";
+import Calendar from "./Calendar";
 
 export default function Taskbar() {
   const [time, setTime] = createSignal(new Date());
@@ -41,24 +42,30 @@ export default function Taskbar() {
       <button
         id="startButton"
         onClick={() => setStore("showStartMenu", !store.showStartMenu)}
-        class="cursor-pointer h-full w-fit p-2 flex items-center hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm"
+        class="cursor-pointer h-full w-fit px-3 flex items-center hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm"
       >
         <img
-          src="../../src/assets/arch.png"
+          src="../../src/assets/logos/windows.png"
           alt=""
-          class="w-10 aspect-square "
+          class="w-10 aspect-square"
         />
       </button>
-      <Show when={store.showStartMenu}>
-        <div class="absolute bottom-14 left-4">
-          <StartMenu />
-        </div>
-      </Show>
+
+      {/* start menu */}
+      <div
+        class="absolute bottom-14 left-4 transition-all duration-200 ease-in-out rounded-xl backdrop-blur-3xl"
+        classList={{
+          "opacity-100": store.showStartMenu,
+          "opacity-0 translate-y-20 pointer-events-none": !store.showStartMenu,
+        }}
+      >
+        <StartMenu />
+      </div>
 
       <div class="self-center">
         <input
           type="text"
-          class="bg-background/50 py-2 px-4 rounded-full"
+          class="bg-background/50 py-2 px-4 rounded-full focus:outline-0"
           placeholder="Search"
         />
       </div>
@@ -81,7 +88,7 @@ export default function Taskbar() {
                 }
               }}
             >
-              <img src={taskbarApp.icon} alt="" class="size-full " />
+              <img src={taskbarApp.icon} alt="" class="h-full aspect-square" />
 
               <div
                 class="transition-all duration-200 ease-in-out rounded py-[2px] px-2"
@@ -96,6 +103,7 @@ export default function Taskbar() {
         </For>
       </div>
 
+      {/* language menu toggle */}
       <div
         id="langMenuToggle"
         onClick={() => setStore("showLangMenu", !store.showLangMenu)}
@@ -104,33 +112,51 @@ export default function Taskbar() {
         <FaSolidChevronUp />
         <p>{store.lang}</p>
       </div>
-      <Show when={store.showLangMenu}>
+      <div
+        id="langMenu"
+        class="absolute bottom-14 right-15 flex flex-col border border-border overflow-y-auto rounded-xl bg-black/50 p-4 transition-all duration-200 ease-in-out backdrop-blur-3xl"
+        classList={{
+          "opacity-100": store.showLangMenu,
+          "opacity-0 translate-y-20 pointer-events-none": !store.showLangMenu,
+        }}
+      >
         <div
-          id="langMenu"
-          class="absolute bottom-14 right-15 flex flex-col border border-border overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent rounded-xl bg-black/50 backdrop-blur-3xl p-4"
+          class="px-8 py-2 rounded-lg cursor-pointer hover:bg-blue-300/10"
+          onClick={() => {
+            setStore("lang", "Fr");
+            setStore("showLangMenu", false);
+          }}
         >
-          <div
-            class="px-8 py-2 rounded-lg cursor-pointer hover:bg-black/50"
-            onClick={() => {
-              setStore("lang", "Fr");
-              setStore("showLangMenu", false);
-            }}
-          >
-            Fr
-          </div>
-          <div
-            class="px-8 py-2 rounded-lg cursor-pointer hover:bg-black/50"
-            onClick={() => {
-              setStore("lang", "En");
-              setStore("showLangMenu", false);
-            }}
-          >
-            En
-          </div>
+          Fr
         </div>
-      </Show>
+        <div
+          class="px-8 py-2 rounded-lg cursor-pointer hover:bg-blue-300/10"
+          onClick={() => {
+            setStore("lang", "En");
+            setStore("showLangMenu", false);
+          }}
+        >
+          En
+        </div>
+      </div>
 
-      <div class="h-full text-xs text-foreground flex flex-col px-4 items-center justify-center min-w-fit">
+      {/* date and time toggle */}
+      <div
+        id="showDateMenu"
+        class="absolute bottom-14 right-2 flex flex-col border border-border overflow-y-auto rounded-xl bg-black/50 transition-all duration-200 ease-in-out backdrop-blur-3xl"
+        classList={{
+          "opacity-100": store.showDateMenu,
+          "opacity-0 translate-x-20 pointer-events-none": !store.showDateMenu,
+        }}
+      >
+        <Calendar />
+      </div>
+
+      <div
+        onClick={() => setStore("showDateMenu", !store.showDateMenu)}
+        id="dateMenuToggle"
+        class="h-full text-xs text-foreground flex flex-col px-4 items-center justify-center min-w-fit rounded hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out cursor-pointer "
+      >
         <div>{formatTime()}</div>
         <div>{formatDate()}</div>
       </div>

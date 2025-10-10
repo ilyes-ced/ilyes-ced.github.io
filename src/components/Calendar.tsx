@@ -1,0 +1,86 @@
+import Calendar from "@corvu/calendar";
+import { Index } from "solid-js";
+import type { VoidComponent } from "solid-js";
+import "../cal.css";
+
+import { AiOutlineLeft, AiOutlineRight } from "solid-icons/ai";
+
+const CalendarExample: VoidComponent = () => {
+  return (
+    <div>
+      <Calendar mode="single">
+        {(props) => (
+          <div class="rounded-md p-3 shadow-md ">
+            <div class="flex items-center justify-between">
+              <Calendar.Nav
+                action="prev-month"
+                aria-label="Go to previous month"
+                class="size-7 rounded-sm bg-corvu-200/50 p-1.25 hover:bg-corvu-200 cursor-pointer"
+              >
+                <AiOutlineLeft size="18" />
+              </Calendar.Nav>
+              <Calendar.Label class="text-sm">
+                {formatMonth(props.month)} {props.month.getFullYear()}
+              </Calendar.Label>
+              <Calendar.Nav
+                action="next-month"
+                aria-label="Go to next month"
+                class="size-7 rounded-sm bg-corvu-200/50 p-1.25 hover:bg-corvu-200 cursor-pointer"
+              >
+                <AiOutlineRight size="18" />
+              </Calendar.Nav>
+            </div>
+            <Calendar.Table class="mt-3">
+              <thead>
+                <tr>
+                  <Index each={props.weekdays}>
+                    {(weekday) => (
+                      <Calendar.HeadCell
+                        abbr={formatWeekdayLong(weekday())}
+                        class="w-8 pb-1 text-xs font-normal opacity-65"
+                      >
+                        {formatWeekdayShort(weekday())}
+                      </Calendar.HeadCell>
+                    )}
+                  </Index>
+                </tr>
+              </thead>
+              <tbody>
+                <Index each={props.weeks}>
+                  {(week) => (
+                    <tr>
+                      <Index each={week()}>
+                        {(day) => (
+                          <Calendar.Cell class="p-0">
+                            <Calendar.CellTrigger
+                              day={day()}
+                              class="size-8 rounded-md text-sm focus-visible:bg-corvu-200/80 disabled:pointer-events-none disabled:opacity-40 data-selected:bg-corvu-300! data-today:bg-corvu-200/50 lg:hover:bg-corvu-200/80 cursor-pointer"
+                            >
+                              {day().getDate()}
+                            </Calendar.CellTrigger>
+                          </Calendar.Cell>
+                        )}
+                      </Index>
+                    </tr>
+                  )}
+                </Index>
+              </tbody>
+            </Calendar.Table>
+          </div>
+        )}
+      </Calendar>
+    </div>
+  );
+};
+
+const { format: formatWeekdayLong } = new Intl.DateTimeFormat("en", {
+  weekday: "long",
+});
+const { format: formatWeekdayShort } = new Intl.DateTimeFormat("en", {
+  weekday: "short",
+});
+const { format: formatMonth } = new Intl.DateTimeFormat("en", {
+  month: "long",
+});
+
+export default CalendarExample;

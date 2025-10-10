@@ -1,5 +1,6 @@
-import { createSignal, onMount, For } from "solid-js";
+import { createSignal, onMount, For, JSX } from "solid-js";
 import { store } from "../../store";
+import { AiFillGithub } from "solid-icons/ai";
 
 interface TerminalLine {
   text: string;
@@ -8,85 +9,114 @@ interface TerminalLine {
 
 export default function Terminal() {
   let inputRef: HTMLInputElement | undefined;
+  let terminalRef: HTMLDivElement | undefined;
 
-  const [lines, setLines] = createSignal<TerminalLine[]>([
-    {
-      text: "Welcome to my portfolio terminal!",
-      style: "text-green",
-    },
-    {
-      text: "Type 'help' to see available commands.",
-      style: "text-yellow",
-    },
+  const [lines, setLines] = createSignal<JSX.Element[]>([
+    <div class="text-green">Welcome to my portfolio terminal!</div>,
+    <div class="text-yellow">
+      Type '<span class="font-bold">help</span>' to see available commands.
+    </div>,
   ]);
 
   const [command, setCommand] = createSignal("");
   const [history, setHistory] = createSignal<string[]>([]);
   const [historyIndex, setHistoryIndex] = createSignal<number | null>(null);
 
-  const commands: Record<string, TerminalLine[]> = {
-    help: [
-      { text: "Available commands:", style: "text-blue" },
-      { text: "aboutme    - Learn more about me", style: "text-foreground" },
-      { text: "github     - View my GitHub profile", style: "text-foreground" },
-      { text: "projects   - See my projects", style: "text-foreground" },
-      { text: "education  - See my education", style: "text-foreground" },
-      { text: "experience - Work experience", style: "text-foreground" },
-      { text: "skills     - My technical skills", style: "text-foreground" },
-      { text: "resume     - Download my resume", style: "text-foreground" },
-      { text: "socials    - View my social links", style: "text-foreground" },
-    ],
-    aboutme: [
-      {
-        text: "I'm a passionate web developer focused on building fast, accessible, and beautiful user experiences.",
-        style: "text-green",
-      },
-    ],
-    github: [
-      {
-        text: "🔗 https://github.com/yourusername",
-        style: "text-blue underline",
-      },
-    ],
-    projects: [
-      { text: "📁 Project 1 - Personal Portfolio", style: "text-purple" },
-      { text: "📁 Project 2 - E-commerce Platform", style: "text-purple" },
-    ],
-    education: [
-      {
-        text: "🎓 B.S. in Computer Science, XYZ University",
-        style: "text-orange",
-      },
-    ],
-    experience: [
-      {
-        text: "💼 Frontend Developer @ ABC Corp (2021–Present)",
-        style: "text-orange",
-      },
-    ],
-    skills: [
-      {
-        text: "🧠 JavaScript, TypeScript, SolidJS, React, Tailwind, Node.js",
-        style: "text-red",
-      },
-    ],
-    resume: [
-      {
-        text: "📄 Download Resume: https://yourdomain.com/resume.pdf",
-        style: "text-blue underline",
-      },
-    ],
-    socials: [
-      {
-        text: "🐦 Twitter: https://twitter.com/yourhandle",
-        style: "text-blue underline",
-      },
-      {
-        text: "💼 LinkedIn: https://linkedin.com/in/yourhandle",
-        style: "text-blue underline",
-      },
-    ],
+  const commands: Record<string, JSX.Element> = {
+    help: (
+      <div>
+        <p class="text-blue font-bold">System commands:</p>
+        <p class="text-foreground font-semibold">
+          &emsp; help | h{" "}
+          <span class="font-normal">- Display available commands</span>
+        </p>
+        <p class="text-foreground font-semibold">
+          &emsp; clear | cls{" "}
+          <span class="font-normal">- Clear the terminal</span>
+        </p>
+        <p class="text-foreground font-semibold">
+          &emsp; neofetch | fetch{" "}
+          <span class="font-normal">- Display information</span>
+        </p>
+
+        <p class="text-blue font-bold">Personal information commands:</p>
+        <p class="text-foreground font-semibold">
+          &emsp; whoami{" "}
+          <span class="font-normal">- Display information about me</span>
+        </p>
+        <p class="text-foreground font-semibold">
+          &emsp; skills{" "}
+          <span class="font-normal">- Display information about my skills</span>
+        </p>
+        <p class="text-foreground font-semibold">
+          &emsp; projects{" "}
+          <span class="font-normal">- Display my previous projects</span>
+        </p>
+
+        <p class="text-blue font-bold">Socials:</p>
+
+        <p class="text-foreground font-semibold">
+          &emsp; Github{" "}
+          <span class="font-normal">- Go to my github profile</span>
+        </p>
+        <p class="text-foreground font-semibold">
+          &emsp; LinkedIn{" "}
+          <span class="font-normal">- Go to my linkedin profile</span>
+        </p>
+      </div>
+    ),
+
+    aboutme: <div>aboutme</div>,
+    github: (
+      <div class="flex items-center gap-2">
+        <span>Redirecting you to:</span>
+        <a
+          class="underline text-blue flex items-center gap-2"
+          href="https://github.com/ilyes-ced"
+          target="_blank"
+        >
+          <AiFillGithub />
+          <p>https://github.com/ilyes-ced</p>
+        </a>
+      </div>
+    ),
+    projects: (
+      <div class="">
+        <div class="">title</div>
+        <div class="">Torrent client</div>
+        <div class="">Productivity & Management App (WIP) </div>
+        <div class="">Slack Clone</div>
+        <div class="">ClickUp Clone</div>
+        <div class="">Classic Games Collection</div>
+        <div class="">Brainf*ck Interpreter</div>
+        <div class="">Reddit Clone</div>
+        <div class="">Java Multi-Client Chat App</div>
+        <div class="">Blogs UI</div>
+      </div>
+    ),
+    education: <div>education</div>,
+    experience: <div>experience</div>,
+    skills: <div>skills</div>,
+    resume: <div>resume</div>,
+    socials: <div>socials</div>,
+    linkedin: (
+      <a
+        class="underline text-blue flex items-center gap-2"
+        href="https://github.com/ilyes-ced"
+        target="_blank"
+      >
+        <AiFillGithub />
+        <p>linkedin url goes here</p>
+      </a>
+    ),
   };
+
+  function scrollToBottom() {
+    if (terminalRef) {
+      terminalRef.scrollTop = terminalRef.scrollHeight;
+    }
+  }
+
   function updateMirrorWidth() {
     setMirrorWidth(mirrorRef?.getBoundingClientRect().width ?? 0);
   }
@@ -97,20 +127,66 @@ export default function Terminal() {
     if (e.key === "Enter") {
       if (!currentCmd) return;
 
-      const output = commands[currentCmd.toLowerCase()] || [
-        { text: `Command not found: ${currentCmd}`, style: "text-red" },
-      ];
+      const output = (() => {
+        switch (currentCmd.toLowerCase()) {
+          case "github":
+            window.open(
+              "https://github.com/ilyes-ced",
+              "_blank",
+              "noopener,noreferrer"
+            );
+            return commands["github"];
+          case "gh":
+            window.open(
+              "https://github.com/ilyes-ced",
+              "_blank",
+              "noopener,noreferrer"
+            );
+            return commands["github"];
+          case "linkedin":
+            return commands["linkedin"];
+          case "ln":
+            return commands["linkedin"];
+          case "help":
+            return commands["help"];
+          case "h":
+            return commands["help"];
+          case "projects":
+            return commands["projects"];
+          case "clear":
+            // clear
+            setLines([]);
+            return;
+          case "cls":
+            // clear
+            setLines([]);
+            return;
+
+          case "neofetch":
+            return;
+          case "fetch":
+            return;
+
+          default:
+            return <div class="text-red">Command not found: {currentCmd}</div>;
+        }
+      })();
+
+      // const output = commands[currentCmd.toLowerCase()] || [
+      //   <div class="text-red">Command not found: {currentCmd}</div>,
+      // ];
 
       setLines((prev) => [
         ...prev,
-        { text: `> ${currentCmd}`, style: "text-foreground" },
-        ...output,
+        <div class="text-foreground">&gt; {currentCmd}</div>,
+        output,
       ]);
 
       setHistory((prev) => [...prev, currentCmd]);
       setHistoryIndex(null);
       setCommand("");
       updateMirrorWidth();
+      scrollToBottom(); // <- scroll after setting lines
       e.preventDefault();
     }
 
@@ -165,8 +241,8 @@ export default function Terminal() {
         // Show possible completions
         setLines((prev) => [
           ...prev,
-          { text: `> ${currentCmd}`, style: "text-foreground" },
-          { text: matches.join("    "), style: "text-yellow" },
+          <div class="text-foreground">&gt; {currentCmd}</div>,
+          <div class="text-yellow">{matches.join("    ")}</div>,
         ]);
       }
     }
@@ -184,14 +260,11 @@ export default function Terminal() {
   return (
     <div
       id="terminal"
+      ref={terminalRef}
       class=" text-foreground font-mono text-sm sm:text-base p-8 h-full overflow-scroll tracking-wide leading-relaxed "
       onClick={() => inputRef?.focus()}
     >
-      <For each={lines()}>
-        {(line) => (
-          <div class={line.style ?? "text-foreground"}>{line.text}</div>
-        )}
-      </For>
+      <For each={lines()}>{(line) => line}</For>
 
       <div class="flex space-x-2 mt-2">
         <div>

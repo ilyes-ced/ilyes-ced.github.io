@@ -9,17 +9,19 @@ interface GlobalStore {
   focusedApp: string; // names of apps
   showStartMenu: boolean;
   showLangMenu: boolean;
+  showDateMenu: boolean;
   lang: "En" | "Fr";
   wallpaper: string;
 }
 
 const [store, setStore] = createStore<GlobalStore>({
   //, "gui"
-  activeApps: [Apps[1]],
+  activeApps: [Apps[0]],
   taskbarPinnedApps: Apps,
   focusedApp: "gui",
   showStartMenu: false,
   showLangMenu: false,
+  showDateMenu: false,
   lang: "En",
   wallpaper: "/src/assets/wallpapers/win11_3.jpg",
 });

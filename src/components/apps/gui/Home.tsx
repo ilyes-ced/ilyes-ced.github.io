@@ -99,6 +99,19 @@ const Databaselogos = [
   },
 ];
 
+const OSs = [
+  {
+    name: "Arch Linux",
+    logo: "/src/assets/arch.png",
+    color: "#0f94d2",
+  },
+  {
+    name: "Windows",
+    logo: "/src/assets/logos/windows.png",
+    color: "#0078d4",
+  },
+];
+
 export default function () {
   return (
     <div class="size-full flex flex-col space-y-6 ">
@@ -143,14 +156,14 @@ export default function () {
       <div class="">
         <div class="pl-4 space-y-2">
           <div class="">
-            <h2 class="text-2xl font-extrabold py-4">languages</h2>
+            <h2 class="text-2xl font-extrabold py-4">Programming Languages</h2>
             <div class="pl-4 flex flex-wrap gap-2">
               <For each={Langlogos}>{(logo) => <Logo {...logo} />}</For>
             </div>
           </div>
 
           <div class="">
-            <h2 class="text-2xl font-extrabold py-4">frameworks</h2>
+            <h2 class="text-2xl font-extrabold py-4">Frameworks</h2>
             <div class="pl-4 flex flex-wrap gap-2">
               <For each={Frameworklogos}>
                 {(Frameworklogo) => <Logo {...Frameworklogo} />}
@@ -159,19 +172,54 @@ export default function () {
           </div>
 
           <div class="">
-            <h2 class="text-2xl font-extrabold py-4">databases</h2>
+            <h2 class="text-2xl font-extrabold py-4">Databases</h2>
             <div class="pl-4 flex flex-wrap gap-2">
               <For each={Databaselogos}>
                 {(Databaselogo) => <Logo {...Databaselogo} />}
               </For>
             </div>
           </div>
+
+          <div class="">
+            <h2 class="text-2xl font-extrabold py-4">Operating Systems</h2>
+            <div class="pl-4 flex flex-wrap gap-2">
+              <For each={OSs}>{(OS) => <Logo {...OS} />}</For>
+            </div>
+          </div>
         </div>
       </div>
 
-      <h1 class="text-xl font-extrabold">Education</h1>
+      <h1 class="text-5xl font-extrabold">Education</h1>
 
-      <div>masters degree</div>
+      <div class="pl-4 flex">
+        <div class="pt-1">
+          <div class="size-4 rounded-full bg-blue"></div>
+          <div class="w-[2px] translate-x-[7px] h-11 rounded-full bg-blue"></div>
+          <div class="size-4 rounded-full bg-blue"></div>
+        </div>
+        <div class="flex flex-col justify-between pl-4">
+          <div class="experience__data bd-grid">
+            <h3 class="font-semibold mb-1">
+              Bachelor's Degree in Information Thechnology
+            </h3>
+            <span class="font-light text-sm">
+              2022 at Universite Abdelhamid Mehri Constantine 2, Constantine,
+              Algeria
+            </span>
+            <p class="my-2 text-justify"></p>
+          </div>
+          <div class="experience__data bd-grid">
+            <h3 class="font-semibold mb-1">
+              Master's Degree in Information Thechnology
+            </h3>
+            <span class="font-light text-sm">
+              2025 at Universite Abdelhamid Mehri Constantine 2, Constantine,
+              Algeria
+            </span>
+            <p class="my-2 text-justify"></p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -213,8 +261,8 @@ const Logo = (props: (typeof Langlogos)[0]) => {
           class="absolute inset-0 bg-fill z-0 w-full"
           style={{
             background: Array.isArray(props.color)
-              ? `linear-gradient(to bottom right, ${props.color[0]} 0%, ${props.color[1]} 100%)`
-              : `${props.color}`,
+              ? `linear-gradient(to bottom right, ${props.color[0]}75 0%, ${props.color[1]}75 100%)`
+              : `${props.color}75`,
           }}
         ></span>
 

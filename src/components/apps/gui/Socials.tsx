@@ -50,7 +50,7 @@ export default function () {
           <input
             type="text"
             name="subject"
-            class="border w-full p-2"
+            class="border w-full p-2 focus:outline-0"
             placeholder="Enter your Subject"
           />
         </div>
@@ -60,7 +60,7 @@ export default function () {
           <input
             type="text"
             name="email"
-            class="border w-full p-2"
+            class="border w-full p-2 focus:outline-0"
             placeholder="Enter your Email"
           />
         </div>
@@ -69,7 +69,7 @@ export default function () {
           <p>Message</p>
           <textarea
             name="email"
-            class="border w-full p-2 h-36"
+            class="border w-full p-2 h-36 focus:outline-0"
             placeholder="Enter your Message"
           />
         </div>

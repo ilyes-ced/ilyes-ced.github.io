@@ -113,7 +113,7 @@ export default function Window(props: any) {
     <div
       onClick={() => setStore("focusedApp", props.app.name)}
       ref={windowRef}
-      class="window flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-transparent bg-black/75 backdrop-blur-3xl "
+      class="window flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto  bg-black/75 backdrop-blur-3xl "
       style={{
         width: props.app.windowState.max ? "100%" : `${size().w}px`,
         height: props.app.windowState.max ? "100%" : `${size().h}px`,
@@ -143,22 +143,14 @@ export default function Window(props: any) {
             onClick={() => toggleMinMax(props.app.name, "min")}
             class="group/min cursor-pointer rounded bg-blue-300 aspect-4/1 h-6 flex items-center justify-center"
           >
-            <FaRegularWindowMinimize
-              class="opacity-0 group-hover/min:opacity-100 
-           pointer-events-none group-hover/min:pointer-events-auto 
-           transition-all duration-200 ease-in-out"
-            />
+            <FaRegularWindowMinimize class="opacity-0 group-hover/min:opacity-100 pointer-events-none group-hover/min:pointer-events-auto transition-all duration-200 ease-in-out" />
           </div>
           <div
             id="maximize"
             onClick={() => toggleMinMax(props.app.name, "max")}
             class="group/max cursor-pointer rounded bg-blue-600 aspect-4/1 h-6 flex items-center justify-center"
           >
-            <FaRegularWindowMaximize
-              class="opacity-0 group-hover/max:opacity-100 
-           pointer-events-none group-hover/max:pointer-events-auto 
-           transition-all duration-200 ease-in-out"
-            />
+            <FaRegularWindowMaximize class="opacity-0 group-hover/max:opacity-100 pointer-events-none group-hover/max:pointer-events-auto transition-all duration-200 ease-in-out" />
           </div>
           <div
             id="close"
@@ -170,16 +162,14 @@ export default function Window(props: any) {
             class="group/close cursor-pointer rounded bg-blue-900 aspect-4/1 h-6 flex items-center justify-center"
           >
             <IoCloseSharp
-              class="opacity-0 group-hover/close:opacity-100 
-           pointer-events-none group-hover/close:pointer-events-auto 
-           transition-all duration-200 ease-in-out"
+              class="opacity-0 group-hover/close:opacity-100 pointer-events-none group-hover/close:pointer-events-auto transition-all duration-200 ease-in-out"
               size={24}
             />
           </div>
         </div>
       </div>
 
-      <div id="content" class="windowScoll flex-grow h-max text-black ">
+      <div id="windowContent" class="windowScoll flex-grow h-max text-black">
         {props.children}
       </div>
 

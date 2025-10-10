@@ -6,6 +6,7 @@ import { Apps } from "./Apps";
 export default function DesktopIcon(props: any) {
   const gridSize = 100;
 
+  const [selected, setSelected] = createSignal(false);
   const [pos, setPos] = createSignal({ x: props.x || 0, y: props.y || 0 });
   const [dragging, setDragging] = createSignal(false);
   const [offset, setOffset] = createSignal({ x: 0, y: 0 });
@@ -59,8 +60,9 @@ export default function DesktopIcon(props: any) {
   //? +20 is for making them not stick to the edge idk if it could cause issues
   return (
     <div
+      onClick={() => setSelected(!selected())}
       ref={iconRef}
-      class="absolute cursor-pointer flex flex-col items-center h-fit border border-transparent hover:border-border hover:bg-blue-300/10 p-2 rounded-md size-18"
+      class="absolute cursor-pointer flex flex-col items-center h-fit p-2 rounded-md size-18 space-y-2"
       style={{
         left: `${pos().x + 20}px`,
         top: `${pos().y + 20}px`,
@@ -80,12 +82,19 @@ export default function DesktopIcon(props: any) {
     >
       <img
         src={props.icon}
-        class="size-12 aspect-square select-none"
+        class="size-12 aspect-square select-none border-2 border-transparent"
         draggable="false"
+        classList={{
+          "border border-blue-600 bg-blue-600/40": selected(),
+        }}
       />
-      <div class="text-lg text-center">
+      <div
+        class="text-lg text-center border-2 border-transparent"
+        classList={{
+          "border border-blue-600 bg-blue-600/40": selected(),
+        }}
+      >
         {props.name}
-        {props}
       </div>
     </div>
   );
