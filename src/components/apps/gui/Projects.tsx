@@ -91,7 +91,7 @@ const TorrentCard = () => {
 const MilanoteCard = () => {
   return (
     <a
-      href="https://github.com/ilyes-ced/graphnote"
+      href="https://github.com/ilyes-ced/graphNote"
       target="_blank"
       class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >

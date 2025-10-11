@@ -31,32 +31,34 @@ export default function () {
   return (
     <div class="text-foreground flex flex-col h-full justify-between">
       <div
-        class="w-full grid gap-4 p-4"
+        class="w-full grid gap-4 p-4 overflow-scroll"
         style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"
       >
         <For each={wallpapers}>
           {(wallpaper, index) => (
-            <div class="rounded-lg overflow-hidden h-48">
-              {selectedWall() === index()}
+            <div class=" overflow-hidden h-48">
               <img
                 onClick={() => {
                   setSelectedWall(index());
                 }}
                 src={wallpaper}
                 alt=""
-                class="w-full h-full object-cover cursor-pointer border-2 border-transparent hover:opacity-50 hover:border-border transition-opacity duration-200 ease-in-out"
+                class="w-full h-full object-cover cursor-pointer border-2 border-border transition-opacity duration-200 ease-in-out rounded-lg"
                 classList={{
-                  "border-4 border-red-500": selectedWall() === index(),
+                  "border-blue-900/50": selectedWall() === index(),
+                  "hover:opacity-50 hover:border-border": !(
+                    selectedWall() === index()
+                  ),
                 }}
               />
             </div>
           )}
         </For>
       </div>
-      <div class="p-4 self-end justify-self-end">
+      <div class="p-4 w-full flex justify-end h-fit">
         <button
           onClick={() => setStore("wallpaper", wallpapers[selectedWall() ?? 0])}
-          class="border p-2 rounded-lg cursor-pointer hover:bg-background flex items-center justify-center"
+          class="border p-2 rounded-lg cursor-pointer hover:bg-blue-300/10 flex items-center justify-center transition-color duration-200 ease-in-out"
         >
           Set as Wallpaper
         </button>

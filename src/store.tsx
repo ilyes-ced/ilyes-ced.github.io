@@ -16,7 +16,7 @@ interface GlobalStore {
 
 const [store, setStore] = createStore<GlobalStore>({
   //, "gui"
-  activeApps: [Apps[0]],
+  activeApps: [Apps[3]],
   taskbarPinnedApps: Apps,
   focusedApp: "gui",
   showStartMenu: false,

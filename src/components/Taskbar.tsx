@@ -47,7 +47,7 @@ export default function Taskbar() {
         <img
           src="../../src/assets/logos/windows.png"
           alt=""
-          class="w-10 aspect-square"
+          class="min-w-6 w-6 aspect-square"
         />
       </button>
 
@@ -73,7 +73,7 @@ export default function Taskbar() {
         <For each={store.taskbarPinnedApps}>
           {(taskbarApp) => (
             <div
-              class="flex flex-col items-center justify-center h-full min-w-fit p-1 aspect-square cursor-pointer hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm"
+              class="flex flex-col items-center justify-center h-full min-w-fit p-1 aspect-square cursor-pointer hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm relative"
               onClick={() => {
                 if (store.activeApps.includes(taskbarApp)) {
                   if (store.focusedApp === taskbarApp.name) {
@@ -88,10 +88,14 @@ export default function Taskbar() {
                 }
               }}
             >
-              <img src={taskbarApp.icon} alt="" class="h-full aspect-square" />
+              <img
+                src={taskbarApp.icon}
+                alt=""
+                class="min-w-6 w-6 aspect-square"
+              />
 
               <div
-                class="transition-all duration-200 ease-in-out rounded py-[2px] px-2"
+                class="absolute top-11/12 transition-all duration-200 ease-in-out rounded py-[2px] px-2"
                 classList={{
                   "bg-blue-500": store.focusedApp === taskbarApp.name,
                   "bg-blue-100": store.activeApps.includes(taskbarApp),
