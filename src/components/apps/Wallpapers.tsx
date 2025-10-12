@@ -10,7 +10,7 @@ import winn11_7 from "/src/assets/wallpapers/win11_7.jpg";
 import winn11_8 from "/src/assets/wallpapers/win11_8.jpg";
 import winn11_9 from "/src/assets/wallpapers/win11_9.png";
 import { createSignal } from "solid-js";
-import { setStore } from "../../store";
+import { setStore, store } from "../../store";
 
 const wallpapers = [
   winn11_0,
@@ -60,7 +60,7 @@ export default function () {
           onClick={() => setStore("wallpaper", wallpapers[selectedWall() ?? 0])}
           class="border p-2 rounded-lg cursor-pointer hover:bg-blue-300/10 flex items-center justify-center transition-color duration-200 ease-in-out"
         >
-          Set as Wallpaper
+          {store.langTexts.setWallpaper}
         </button>
       </div>
     </div>

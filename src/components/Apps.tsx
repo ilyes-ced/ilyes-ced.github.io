@@ -19,6 +19,7 @@ import Github from "./apps/Github";
 import Pacman from "./apps/Pacman";
 import Vscode from "./apps/Vscode";
 import Chrome from "./apps/Chrome";
+import { store } from "../store";
 
 interface AppType {
   name: string;
@@ -33,8 +34,8 @@ interface AppType {
 
 const Apps: AppType[] = [
   {
-    name: "Terminal",
-    description: "Portfolio in CLI format",
+    name: store.langTexts.termName,
+    description: store.langTexts.termDesc,
     component: <Terminal />,
     icon: TerminalIcon,
     windowState: {
@@ -43,8 +44,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "Portfolio",
-    description: "Portfolio in GUI format",
+    name: store.langTexts.portName,
+    description: store.langTexts.portDesc,
     component: <Gui />,
     icon: GuiIcon,
     windowState: {
@@ -53,8 +54,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "Tetris",
-    description: "Tetris game",
+    name: store.langTexts.tetrisName,
+    description: store.langTexts.tetrisDesc,
     component: <Tetris />,
     icon: TetrisIcon,
     windowState: {
@@ -63,8 +64,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "Wallpapers",
-    description: "change desktop wallpaper",
+    name: store.langTexts.wallName,
+    description: store.langTexts.wallDesc,
     component: <Wallpapers />,
     icon: WallpaperIcon,
     windowState: {
@@ -73,8 +74,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "Wikipedia",
-    description: "the Wikipedia website",
+    name: store.langTexts.wikiName,
+    description: store.langTexts.wikiDesc,
     component: <Wikipedia />,
     icon: WikipediaIcon,
     windowState: {
@@ -84,8 +85,8 @@ const Apps: AppType[] = [
   },
 
   {
-    name: "Github",
-    description: "my Github profile",
+    name: store.langTexts.ghName,
+    description: store.langTexts.ghDesc,
     component: <Github />,
     icon: GithubLogo,
     windowState: {
@@ -94,8 +95,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "LinkedIn",
-    description: "my LinkedIn profile",
+    name: store.langTexts.lnName,
+    description: store.langTexts.lnDesc,
     component: <Wikipedia />,
     icon: LinkedinLogo,
     windowState: {
@@ -104,8 +105,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "Email",
-    description: "My email",
+    name: store.langTexts.emailName,
+    description: store.langTexts.emailDesc,
     component: <Wikipedia />,
     icon: GmailLogo,
     windowState: {
@@ -114,8 +115,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "Pacman",
-    description: "pacman game",
+    name: store.langTexts.pacmanName,
+    description: store.langTexts.pacmanDesc,
     component: <Pacman />,
     icon: PacmanLogo,
     windowState: {
@@ -124,8 +125,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "Vscode",
-    description: "Vscode editor",
+    name: store.langTexts.vsName,
+    description: store.langTexts.vsDesc,
     component: <Vscode />,
     icon: VscodeLogo,
     windowState: {
@@ -134,8 +135,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: "Chrome",
-    description: "Vscode editor",
+    name: store.langTexts.chromeName,
+    description: store.langTexts.chromeDesc,
     component: <Chrome />,
     icon: ChromeLogo,
     windowState: {

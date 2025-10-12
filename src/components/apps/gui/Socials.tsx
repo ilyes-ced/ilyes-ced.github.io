@@ -1,16 +1,17 @@
+import { store } from "../../../store";
+
 export default function () {
   return (
     <div class="space-y-6">
-      <h1 class="text-xl font-extrabold">Contact Me</h1>
+      <h1 class="text-xl font-extrabold">{store.langTexts.contactMe}</h1>
       <div class="flex justify-between">
         <div class="flex flex-col">
           <div>
-            Have a project idea, a question, or just want to say hello?
+            {store.langTexts.contact0}
             <br />
-            I'm always open to chatting about software, tech, or potential
-            collaborations.
+            {store.langTexts.contact1}
             <br />
-            Drop me a message — I'll get back to you as soon as I can.
+            {store.langTexts.contact2}
           </div>
         </div>
         <div class="flex flex-col">
@@ -46,7 +47,7 @@ export default function () {
 
       <div class="flex flex-col space-y-4">
         <div class="flex flex-col space-y-2">
-          <p>Subject</p>
+          <p>{store.langTexts.Subject}</p>
           <input
             type="text"
             name="subject"
@@ -56,7 +57,7 @@ export default function () {
         </div>
 
         <div class="flex flex-col space-y-2">
-          <p>Email</p>
+          <p>{store.langTexts.Email}</p>
           <input
             type="text"
             name="email"
@@ -66,7 +67,7 @@ export default function () {
         </div>
 
         <div class="flex flex-col space-y-2">
-          <p>Message</p>
+          <p>{store.langTexts.Message}</p>
           <textarea
             name="email"
             class="border w-full p-2 h-36 focus:outline-0"
@@ -76,7 +77,7 @@ export default function () {
       </div>
       <div class="w-full flex justify-end">
         <button class="btn border-2 px-4 py-2 bg-background/10 hover:bg-background/75 transition-colors duration-200 ease-in-out cursor-pointer">
-          Send
+          {store.langTexts.Send}
         </button>
       </div>
     </div>

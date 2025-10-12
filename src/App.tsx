@@ -1,7 +1,7 @@
 import Taskbar from "./components/Taskbar";
 import Desktop from "./components/Desktop";
 import { setStore, store } from "./store";
-import { onMount, onCleanup } from "solid-js";
+import { onMount, onCleanup, createEffect } from "solid-js";
 
 export default function App() {
   onMount(() => {
@@ -15,6 +15,12 @@ export default function App() {
     onCleanup(() => {
       window.removeEventListener("keydown", handler);
     });
+  });
+
+  createEffect(async () => {
+    const { Apps } = await import("./components/Apps");
+    setStore("activeApps", [Apps[0]]);
+    setStore("taskbarPinnedApps", Apps);
   });
 
   return (

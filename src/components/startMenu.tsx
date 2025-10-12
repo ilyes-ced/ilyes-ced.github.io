@@ -27,7 +27,7 @@ export default function () {
       </div>
 
       <div class="p-8">
-        <p class="pb-2">Apps Menu</p>
+        <p class="pb-2">{store.langTexts.appsMenu}</p>
 
         <div class="w-full h-full grid grid-cols-8 gap-4">
           <For each={Apps}>
@@ -49,7 +49,7 @@ export default function () {
 
       <div class="p-8">
         {/* maybe better to remove not sure */}
-        <p class="pb-2">Recommended</p>
+        <p class="pb-2">{store.langTexts.recommended}</p>
         <div class="w-full h-full grid grid-cols-2 gap-4">
           <For each={Apps.slice(0, 6)}>
             {(app, index) => {

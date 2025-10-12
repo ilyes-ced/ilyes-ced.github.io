@@ -13,9 +13,11 @@ export default function Terminal() {
   let terminalRef: HTMLDivElement | undefined;
 
   const [lines, setLines] = createSignal<JSX.Element[]>([
-    <div class="text-green">Welcome to my portfolio terminal!</div>,
+    <div class="text-green">{store.langTexts.welcomeTerm}!</div>,
     <div class="text-yellow">
-      Type '<span class="font-bold">help</span>' to see available commands.
+      {store.langTexts.type} '
+      <span class="font-bold">{store.langTexts.help}</span>'{" "}
+      {store.langTexts.seeCommands}
     </div>,
     <br />,
   ]);
@@ -26,50 +28,49 @@ export default function Terminal() {
 
   const projects = [
     {
-      name: "Torrent client",
+      name: store.langTexts.torrentTitle,
       url: "https://github.com/ilyes-ced/torrent",
-      description: "Torrent client implemented in Rust",
+      description: store.langTexts.torrentDescriptionShort,
     },
     {
-      name: "Productivity & Management App (WIP)",
+      name: store.langTexts.milanoteTitle,
       url: "https://github.com/ilyes-ced/graphnote",
-      description:
-        "A customizable productivity and organization tool inspired by Milanote, Miro, and Kinopio.",
+      description: store.langTexts.milanoteDescriptionShort,
     },
     {
-      name: "Slack Clone",
+      name: store.langTexts.slackTitle,
       url: "https://github.com/ilyes-ced/slack_clone",
-      description: "A real-time team chat app built with modern web tech",
+      description: store.langTexts.slackDescriptionShort,
     },
     {
-      name: "ClickUp Clone",
+      name: store.langTexts.clickupTitle,
       url: "https://github.com/ilyes-ced/clickup_clone",
-      description: "Project & task management platform built from scratch",
+      description: store.langTexts.clickupDescriptionShort,
     },
     {
-      name: "Classic Games Collection",
+      name: store.langTexts.classicTitle,
       url: "https://github.com/ilyes-ced/classic_games",
-      description: "A collection of classic games built from scratch",
+      description: store.langTexts.classicDescriptionShort,
     },
     {
-      name: "Brainf*ck Interpreter",
+      name: store.langTexts.brainfuckTitle,
       url: "https://github.com/ilyes-ced/brainfuck",
-      description: "A minimal Brainf*ck language interpreter written in C",
+      description: store.langTexts.brainfuckDescriptionShort,
     },
     {
-      name: "Reddit Clone",
+      name: store.langTexts.redditTitle,
       url: "https://github.com/ilyes-ced/reddit",
-      description: "A full-stack Reddit clone with modern web technologies",
+      description: store.langTexts.redditDescriptionShort,
     },
     {
-      name: "Java Multi-Client Chat App",
+      name: store.langTexts.chatAppJavaTitle,
       url: "https://github.com/ilyes-ced/chat_app_java",
-      description: "A real-time chat application built with JavaFX and MySQL",
+      description: store.langTexts.chatAppJavaDescriptionShort,
     },
     {
-      name: "Blogs UI",
+      name: store.langTexts.blogsUITitle,
       url: "https://github.com/ilyes-ced/chat_app_java",
-      description: "A real-time chat application built with JavaFX and MySQL",
+      description: store.langTexts.blogsUIDescriptionShort,
     },
   ];
 
@@ -93,46 +94,47 @@ export default function Terminal() {
   const commands: Record<string, () => JSX.Element> = {
     help: () => (
       <div>
-        <p class="text-blue font-bold">System commands:</p>
+        <p class="text-blue font-bold">{store.langTexts.systemCommand}:</p>
         <p class="text-foreground font-semibold">
           &emsp; help | h{" "}
-          <span class="font-normal">- Display available commands</span>
+          <span class="font-normal">- {store.langTexts.helpCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; clear | cls{" "}
-          <span class="font-normal">- Clear the terminal</span>
+          <span class="font-normal">- {store.langTexts.clearCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; neofetch | fetch{" "}
-          <span class="font-normal">- Display information</span>
+          <span class="font-normal">- {store.langTexts.neofetchCommand}</span>
         </p>
 
-        <p class="text-blue font-bold">Personal information commands:</p>
+        <p class="text-blue font-bold">{store.langTexts.personalCommand}:</p>
         <p class="text-foreground font-semibold">
           &emsp; whoami{" "}
-          <span class="font-normal">- Display information about me</span>
+          <span class="font-normal">- {store.langTexts.whoamiCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; skills{" "}
-          <span class="font-normal">- Display information about my skills</span>
+          <span class="font-normal">- {store.langTexts.skillsCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; projects{" "}
-          <span class="font-normal">- Display my previous projects</span>
+          <span class="font-normal">- {store.langTexts.projectsCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
-          &emsp; resume <span class="font-normal">- Download my resume</span>
+          &emsp; resume{" "}
+          <span class="font-normal">- {store.langTexts.resumeCommand}</span>
         </p>
 
-        <p class="text-blue font-bold">Socials:</p>
+        <p class="text-blue font-bold">{store.langTexts.socialsCommand}:</p>
 
         <p class="text-foreground font-semibold">
           &emsp; github | gh{" "}
-          <span class="font-normal">- Go to my github profile</span>
+          <span class="font-normal">- {store.langTexts.githubCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; linkedin | ln{" "}
-          <span class="font-normal">- Go to my linkedin profile</span>
+          <span class="font-normal">- {store.langTexts.linkedinCommand}</span>
         </p>
       </div>
     ),
@@ -140,7 +142,7 @@ export default function Terminal() {
     aboutme: () => <div>aboutme</div>,
     github: () => (
       <div class="flex items-center gap-2">
-        <span>Redirecting you to:</span>
+        <span>{store.langTexts.redirecting}:</span>
         <a
           class="underline text-blue flex items-center gap-2"
           href="https://github.com/ilyes-ced"
@@ -155,8 +157,12 @@ export default function Terminal() {
       <table class="min-w-full text-left text-sm border-collapse border border-gray-700">
         <thead>
           <tr class="">
-            <th class="border border-white px-4 py-2">Project</th>
-            <th class="border border-white px-4 py-2">Description</th>
+            <th class="border border-white px-4 py-2">
+              {store.langTexts.project}
+            </th>
+            <th class="border border-white px-4 py-2">
+              {store.langTexts.description}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -182,24 +188,15 @@ export default function Terminal() {
         </tbody>
       </table>
     ),
-    skills: () => <div>skills</div>,
+    skills: () => <div>{store.langTexts.skills}</div>,
     whoami: () => (
       <div>
         {" "}
-        <p class="text-lg">
-          I'm a passionate self-taught developer with a deep interest in
-          computers, technology, and how things work under the hood. Recently,
-          I've been diving into low-level programming and embedded systems.
-        </p>
-        <p class="text-lg mt-2">
-          While I don’t have professional experience yet, I’ve built several
-          hands-on projects—from a custom torrent client to a Milanote-style
-          app, plus a variety of full-stack websites. You can explore them all
-          on my GitHub.
-        </p>
+        <p class="text-lg">{store.langTexts.whoami1}</p>
+        <p class="text-lg mt-2">{store.langTexts.whoami2}</p>
       </div>
     ),
-    resume: () => <div>resume</div>,
+    resume: () => <div>{store.langTexts.resume}</div>,
     linkedin: () => (
       <a
         class="underline text-blue flex items-center gap-2"
@@ -294,11 +291,12 @@ export default function Terminal() {
             return (
               <>
                 <div class="text-red font-bold">
-                  Command not found: {currentCmd}
+                  {store.langTexts.commandNotFound}: {currentCmd}
                 </div>
                 <div class="text-yellow">
-                  Type '<span class="font-bold">help</span>' to see available
-                  commands.
+                  {store.langTexts.type} '
+                  <span class="font-bold">{store.langTexts.help}</span>'{" "}
+                  {store.langTexts.seeCommands}
                 </div>
               </>
             );
