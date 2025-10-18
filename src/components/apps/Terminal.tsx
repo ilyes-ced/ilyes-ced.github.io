@@ -154,39 +154,42 @@ export default function Terminal() {
       </div>
     ),
     projects: () => (
-      <table class="min-w-full text-left text-sm border-collapse border border-gray-700">
-        <thead>
-          <tr class="">
-            <th class="border border-white px-4 py-2">
-              {store.langTexts.project}
-            </th>
-            <th class="border border-white px-4 py-2">
-              {store.langTexts.description}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <For each={projects}>
-            {(project) => (
-              <tr class="">
-                <td class="border border-white px-4 py-2">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="font-bold underline text-blue hover:text-orange"
-                  >
-                    {project.name}
-                  </a>
-                </td>
-                <td class="border border-white px-4 py-2 text-foreground">
-                  {project.description}
-                </td>
-              </tr>
-            )}
-          </For>
-        </tbody>
-      </table>
+      <>
+        <br />
+        <table class="min-w-full text-left text-sm border-collapse border border-gray-700">
+          <thead>
+            <tr class="">
+              <th class="border border-white px-4 py-2">
+                {store.langTexts.project}
+              </th>
+              <th class="border border-white px-4 py-2">
+                {store.langTexts.description}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <For each={projects}>
+              {(project) => (
+                <tr class="">
+                  <td class="border border-white px-4 py-2">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="font-bold underline text-blue hover:text-orange"
+                    >
+                      {project.name}
+                    </a>
+                  </td>
+                  <td class="border border-white px-4 py-2 text-foreground">
+                    {project.description}
+                  </td>
+                </tr>
+              )}
+            </For>
+          </tbody>
+        </table>
+      </>
     ),
     skills: () => <div>{store.langTexts.skills}</div>,
     whoami: () => (

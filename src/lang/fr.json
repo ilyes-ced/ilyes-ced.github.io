@@ -176,7 +176,11 @@
   "vsName": "Vscode",
   "vsDesc": "Éditeur Vscode",
   "chromeName": "Chrome",
-  "chromeDesc": "Éditeur Vscode",
+  "chromeDesc": "Navigateur Chrome",
+  "paintName": "MS paint",
+  "paintDesc": "outil de dessin Microsoft original",
+  "minesweeperName": "minesweeper",
+  "minesweeperDesc": "jeu original de dragueur de mines Microsoft",
 
   "homeTab": "Accueil",
   "projectsTab": "Projets",

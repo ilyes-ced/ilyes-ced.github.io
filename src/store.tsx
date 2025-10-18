@@ -26,7 +26,7 @@ const [store, setStore] = createStore<GlobalStore>({
   showStartMenu: false,
   showLangMenu: false,
   showDateMenu: false,
-  lang: "Fr",
+  lang: "En",
   langTexts: frenchLang,
   wallpaper: "/src/assets/wallpapers/win11_3.jpg",
 });

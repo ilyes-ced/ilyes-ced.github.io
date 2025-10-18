@@ -15,11 +15,15 @@ import GmailLogo from "/src/assets/logos/gmail.png";
 import PacmanLogo from "/src/assets/logos/pacman.png";
 import VscodeLogo from "/src/assets/logos/vscode.png";
 import ChromeLogo from "/src/assets/logos/chrome.png";
+import PaintLogo from "/src/assets/logos/paint.png";
+import MinesweeperLogo from "/src/assets/logos/minesweeper.png";
 import Github from "./apps/Github";
 import Pacman from "./apps/Pacman";
 import Vscode from "./apps/Vscode";
 import Chrome from "./apps/Chrome";
 import { store } from "../store";
+import MSpaint from "./apps/MSpaint";
+import Minesweeper from "./apps/Minesweeper";
 
 interface AppType {
   name: string;
@@ -139,6 +143,26 @@ const Apps: AppType[] = [
     description: store.langTexts.chromeDesc,
     component: <Chrome />,
     icon: ChromeLogo,
+    windowState: {
+      min: false,
+      max: false,
+    },
+  },
+  {
+    name: store.langTexts.paintName,
+    description: store.langTexts.paintDesc,
+    component: <MSpaint />,
+    icon: PaintLogo,
+    windowState: {
+      min: false,
+      max: false,
+    },
+  },
+  {
+    name: store.langTexts.minesweeperName,
+    description: store.langTexts.minesweeperDesc,
+    component: <Minesweeper />,
+    icon: MinesweeperLogo,
     windowState: {
       min: false,
       max: false,

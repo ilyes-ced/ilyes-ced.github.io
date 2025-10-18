@@ -177,6 +177,10 @@
   "vsDesc": "Vscode editor",
   "chromeName": "Chrome",
   "chromeDesc": "Vscode editor",
+  "paintName": "MS paint",
+  "paintDesc": "original microsoft drawing tool",
+  "minesweeperName": "minesweeper",
+  "minesweeperDesc": "OG microsoft minesweeper game",
 
   "homeTab": "Home",
   "projectsTab": "Projects",
