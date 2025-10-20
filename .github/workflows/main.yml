@@ -22,9 +22,6 @@ jobs:
         env:
           BASE_PATH: /ilyes-ced.github.io/
 
-      - name: create .nojekyll
-        run: touch .output/public/.nojekyll
-
       - name: deploy pages
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
