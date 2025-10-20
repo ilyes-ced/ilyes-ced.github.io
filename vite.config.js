@@ -4,8 +4,14 @@ import devtools from "solid-devtools/vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/",
   plugins: [devtools(), solid(), tailwindcss()],
+  start: {
+    ssr: true,
+    server: {
+      baseURL: process.env.BASE_PATH,
+      preset: "static",
+    },
+  },
   build: {
     target: "esnext",
     outDir: "dist",
