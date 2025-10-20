@@ -6,20 +6,13 @@ import solid from "vite-plugin-solid";
 
 export default defineConfig({
   base: "/ilyes-ced.github.io/",
-
-  start: {
-    ssr: true,
-    server: {
-      baseURL: process.env.BASE_PATH,
-      preset: "static",
-    },
-  },
-
-  plugins: [devtools(), solidPlugin(), tailwindcss(), solid()],
-  server: {
-    port: 3000,
-  },
+  plugins: [devtools(), solid(), tailwindcss()],
   build: {
     target: "esnext",
+    outDir: "dist",
+    emptyOutDir: true,
+  },
+  server: {
+    port: 3000,
   },
 });
