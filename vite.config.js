@@ -2,11 +2,10 @@ import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
 import devtools from "solid-devtools/vite";
 import tailwindcss from "@tailwindcss/vite";
-import solid from "solid-start/vite";
-import staticAdapter from "solid-start-static";
+import solid from "vite-plugin-solid";
 
 export default defineConfig({
-  base: "/",
+  base: "/ilyes-ced.github.io/",
 
   start: {
     ssr: true,
@@ -16,12 +15,7 @@ export default defineConfig({
     },
   },
 
-  plugins: [
-    devtools(),
-    solidPlugin(),
-    tailwindcss(),
-    solid({ adapter: staticAdapter() }),
-  ],
+  plugins: [devtools(), solidPlugin(), tailwindcss(), solid()],
   server: {
     port: 3000,
   },
