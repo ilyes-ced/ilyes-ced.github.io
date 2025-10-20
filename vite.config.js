@@ -4,6 +4,7 @@ import devtools from "solid-devtools/vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  base: "/",
   plugins: [devtools(), solid(), tailwindcss()],
   start: {
     ssr: true,
