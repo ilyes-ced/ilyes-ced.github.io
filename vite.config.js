@@ -4,7 +4,7 @@ import devtools from "solid-devtools/vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/ilyes-ced.github.io/",
+  base: "/",
   plugins: [devtools(), solid(), tailwindcss()],
   build: {
     target: "esnext",
