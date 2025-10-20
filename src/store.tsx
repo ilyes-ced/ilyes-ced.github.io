@@ -3,6 +3,7 @@ import { Apps, AppType } from "./components/Apps";
 import { createEffect } from "solid-js";
 import englishLang from "./lang/en.json";
 import frenchLang from "./lang/fr.json";
+import winn11_3 from "/src/assets/wallpapers/win11_3.jpg";
 
 //? all apps names here
 
@@ -28,7 +29,7 @@ const [store, setStore] = createStore<GlobalStore>({
   showDateMenu: false,
   lang: "En",
   langTexts: frenchLang,
-  wallpaper: "/src/assets/wallpapers/win11_3.jpg",
+  wallpaper: winn11_3,
 });
 
 createEffect(() => {

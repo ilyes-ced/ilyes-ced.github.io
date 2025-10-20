@@ -13,6 +13,7 @@ import DesktopIcon from "./DesktopIcon";
 import { store } from "../store";
 import Gui from "./apps/Gui";
 import { Apps } from "./Apps";
+import pacmanLogo from "/src/assets/logos/pacman.png";
 
 export default function Desktop(): {
   bottom: number;
@@ -78,45 +79,27 @@ export default function Desktop(): {
         }}
       >
         <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img
-            src="/src/assets/logos/pacman.png"
-            class="size-4 aspect-square"
-          />
+          <img src={pacmanLogo} class="size-4 aspect-square" />
           <p>adding options here later</p>
         </div>
         <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img
-            src="/src/assets/logos/pacman.png"
-            class="size-4 aspect-square"
-          />
+          <img src={pacmanLogo} class="size-4 aspect-square" />
           <p>adding options here later</p>
         </div>
         <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img
-            src="/src/assets/logos/pacman.png"
-            class="size-4 aspect-square"
-          />
+          <img src={pacmanLogo} class="size-4 aspect-square" />
           <p>adding options here later</p>
         </div>
         <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img
-            src="/src/assets/logos/pacman.png"
-            class="size-4 aspect-square"
-          />
+          <img src={pacmanLogo} class="size-4 aspect-square" />
           <p>adding options here later</p>
         </div>
         <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img
-            src="/src/assets/logos/pacman.png"
-            class="size-4 aspect-square"
-          />
+          <img src={pacmanLogo} class="size-4 aspect-square" />
           <p>adding options here later</p>
         </div>
         <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img
-            src="/src/assets/logos/pacman.png"
-            class="size-4 aspect-square"
-          />
+          <img src={pacmanLogo} class="size-4 aspect-square" />
           <p>adding options here later</p>
         </div>
       </div>
