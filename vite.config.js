@@ -6,7 +6,15 @@ import solid from "solid-start/vite";
 import staticAdapter from "solid-start-static";
 
 export default defineConfig({
-  base: "/my-portfolio/",
+  base: "/",
+
+  start: {
+    ssr: true,
+    server: {
+      baseURL: process.env.BASE_PATH,
+      preset: "static",
+    },
+  },
 
   plugins: [
     devtools(),

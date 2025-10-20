@@ -3,12 +3,14 @@ name: CI
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
@@ -17,9 +19,14 @@ jobs:
 
       - name: build
         run: npm run build
+        env:
+          BASE_PATH: /
+
+      - name: create .nojekyll
+        run: touch .output/public/.nojekyll
 
       - name: deploy pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           branch: gh-pages
-          folder: dist/public
+          folder: .output/public
