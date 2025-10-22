@@ -3,46 +3,66 @@ import { IoDocumentSharp } from "solid-icons/io";
 import { For } from "solid-js";
 import { store } from "../../../store";
 
+import rustLogo from "/src/assets/logos/rust.png";
+import jsLogo from "/src/assets/logos/js.png";
+import tsLogo from "/src/assets/logos/ts.png";
+import nodejsLogo from "/src/assets/logos/nodejs.png";
+import javaLogo from "/src/assets/logos/java.png";
+import pythonLogo from "/src/assets/logos/python.png";
+import phpLogo from "/src/assets/logos/php.png";
+import dartLogo from "/src/assets/logos/dart.png";
+import tauriLogo from "/src/assets/logos/tauri.png";
+import flutterLogo from "/src/assets/logos/flutter.png";
+import reactLogo from "/src/assets/logos/react.png";
+import svelteLogo from "/src/assets/logos/svelte.png";
+import solidjsLogo from "/src/assets/logos/solidjs.png";
+import laravelLogo from "/src/assets/logos/laravel.png";
+import mysqlLogo from "/src/assets/logos/mysql.png";
+import postgresLogo from "/src/assets/logos/postgres.png";
+import mongodbLogo from "/src/assets/logos/mongodb.png";
+import archLogo from "/src/assets/arch.png";
+import windowsLogo from "/src/assets/logos/windows.png";
+
 //  rust js/ts nodejs java python php dart
 const Langlogos = [
   {
     name: "Rust",
-    logo: "/src/assets/logos/rust.png",
+    logo: rustLogo,
     color: "#dea584",
   },
   {
     name: "Javascript",
-    logo: "/src/assets/logos/js.png",
+    logo: jsLogo,
     color: "#f7df1e",
   },
   {
     name: "Typescript",
-    logo: "/src/assets/logos/ts.png",
+    logo: tsLogo,
     color: "#007acc",
   },
   {
     name: "NodeJs",
-    logo: "/src/assets/logos/nodejs.png",
+    logo: nodejsLogo,
     color: "#7fbd01",
   },
   {
     name: "Java",
-    logo: "/src/assets/logos/java.png",
+    logo: javaLogo,
     color: ["#e01d20", "#0e6fb6"],
   },
   {
     name: "Python",
-    logo: "/src/assets/logos/python.png",
+    logo: pythonLogo,
     color: ["#326d9c", "#ffcf3f"],
   },
   {
     name: "Php",
-    logo: "/src/assets/logos/php.png",
+    logo: phpLogo,
     color: "#8a94bf",
   },
   {
     name: "Dart",
-    logo: "/src/assets/logos/dart.png",
+    logo: dartLogo,
     color: ["#04599c", "#2ab5f5"],
   },
 ];
@@ -51,32 +71,32 @@ const Langlogos = [
 const Frameworklogos = [
   {
     name: "Tauri",
-    logo: "/src/assets/logos/tauri.png",
+    logo: tauriLogo,
     color: ["#23c8db", "#ffc131"],
   },
   {
     name: "Flutter",
-    logo: "/src/assets/logos/flutter.png",
+    logo: flutterLogo,
     color: ["#0e47a1", "#68b6f8"],
   },
   {
     name: "React",
-    logo: "/src/assets/logos/react.png",
+    logo: reactLogo,
     color: "#00d8ff",
   },
   {
     name: "Svelte",
-    logo: "/src/assets/logos/svelte.png",
+    logo: svelteLogo,
     color: "#ff3e00",
   },
   {
     name: "Solidjs",
-    logo: "/src/assets/logos/solidjs.png",
+    logo: solidjsLogo,
     color: ["#90c2e9", "#1e4687"],
   },
   {
     name: "Laravel",
-    logo: "/src/assets/logos/laravel.png",
+    logo: laravelLogo,
     color: "#ff291a",
   },
 ];
@@ -85,17 +105,17 @@ const Frameworklogos = [
 const Databaselogos = [
   {
     name: "Mysql",
-    logo: "/src/assets/logos/mysql.png",
+    logo: mysqlLogo,
     color: "#4479a1",
   },
   {
     name: "Postgres",
-    logo: "/src/assets/logos/postgres.png",
+    logo: postgresLogo,
     color: "#336791",
   },
   {
     name: "MongoDB",
-    logo: "/src/assets/logos/mongodb.png",
+    logo: mongodbLogo,
     color: "#4eb03e",
   },
 ];
@@ -103,12 +123,12 @@ const Databaselogos = [
 const OSs = [
   {
     name: "Arch Linux",
-    logo: "/src/assets/arch.png",
+    logo: archLogo,
     color: "#0f94d2",
   },
   {
     name: "Windows",
-    logo: "/src/assets/logos/windows.png",
+    logo: windowsLogo,
     color: "#0078d4",
   },
 ];

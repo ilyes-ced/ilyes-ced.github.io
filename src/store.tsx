@@ -33,13 +33,10 @@ const [store, setStore] = createStore<GlobalStore>({
 });
 
 createEffect(() => {
-  console.log("lang change:", store.lang);
   if (store.lang === "Fr") {
     setStore("langTexts", frenchLang);
-    console.log(frenchLang);
   } else if (store.lang === "En") {
     setStore("langTexts", englishLang);
-    console.log(englishLang);
   }
 });
 

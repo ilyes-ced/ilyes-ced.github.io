@@ -5,8 +5,7 @@ import { createSignal, onCleanup, onMount } from "solid-js";
 import StartMenu from "./startMenu";
 import { FaSolidChevronUp } from "solid-icons/fa";
 import Calendar from "./Calendar";
-
-import windowsLogo from "src/assets/logos/windows.png";
+import windowsLogo from "/src/assets/logos/windows.png";
 
 export default function Taskbar() {
   const [time, setTime] = createSignal(new Date());
@@ -46,7 +45,7 @@ export default function Taskbar() {
         onClick={() => setStore("showStartMenu", !store.showStartMenu)}
         class="cursor-pointer h-full w-fit px-3 flex items-center hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm"
       >
-        <img src={windowsLogo} alt="" class="min-w-6 w-6 aspect-square" />
+        <img src={windowsLogo} class="min-w-6 w-6 aspect-square" />
       </button>
 
       {/* start menu */}

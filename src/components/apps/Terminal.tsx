@@ -78,15 +78,21 @@ export default function Terminal() {
     return (
       <div class="flex h-fit">
         <div>
-          <div class="w-0 h-0 border-t-[14px] border-t-transparent border-b-[0px] border-b-transparent border-l-[1rem] border-l-green bg-transparent rotate-180"></div>
-          <div class="w-0 h-0 border-t-[0px] border-t-transparent border-b-[14px] border-b-transparent border-l-[1rem] border-l-green bg-transparent rotate-180"></div>
+          <div class="w-0 h-0 border-t-[0.625rem] border-t-transparent border-b-[0px] border-b-transparent border-l-[1rem] border-l-green bg-transparent rotate-180"></div>
+          <div class="w-0 h-0 border-t-[0px] border-t-transparent border-b-[0.625rem] border-b-transparent border-l-[1rem] border-l-green bg-transparent rotate-180"></div>
         </div>
-        <span class="px-2 bg-green text-background font-extrabold">ilyes</span>
-        <div class="w-0 h-0 border-t-[14px] border-t-transparent border-b-[14px] border-b-transparent border-l-[1rem] border-l-green bg-blue"></div>
-        <span class="px-2 bg-blue text-background font-extrabold">~</span>
-        <div class="w-0 h-0 border-t-[14px] border-t-transparent border-b-[14px] border-b-transparent border-l-[1rem] border-l-blue bg-yellow"></div>
-        <span class="px-2 bg-yellow text-background font-extrabold">$</span>
-        <div class="w-0 h-0 border-t-[14px] border-t-transparent border-b-[14px] border-b-transparent border-l-[1rem] border-l-yellow bg-transparent"></div>
+        <span class="px-2 bg-green text-background font-extrabold h-[1.25rem]">
+          ilyes
+        </span>
+        <div class="w-0 h-0 border-t-[0.625rem] border-t-transparent border-b-[0.625rem] border-b-transparent border-l-[1rem] border-l-green bg-blue"></div>
+        <span class="px-2 bg-blue text-background font-extrabold h-[1.25rem]">
+          ~
+        </span>
+        <div class="w-0 h-0 border-t-[0.625rem] border-t-transparent border-b-[0.625rem] border-b-transparent border-l-[1rem] border-l-blue bg-yellow"></div>
+        <span class="px-2 bg-yellow text-background font-extrabold h-[1.25rem]">
+          $
+        </span>
+        <div class="w-0 h-0 border-t-[0.625rem] border-t-transparent border-b-[0.625rem] border-b-transparent border-l-[1rem] border-l-yellow bg-transparent"></div>
       </div>
     );
   };
@@ -434,14 +440,14 @@ export default function Terminal() {
               updateMirrorWidth();
             }}
             onKeyDown={handleCommandSubmit}
-            class="bg-transparent border-none outline-none text-foreground w-full caret-transparent font-mono text-lg"
+            class="bg-transparent border-none outline-none text-foreground w-full caret-transparent font-mono text-lg "
             autofocus
           />
 
           {/* todo: show cursor only when input is focued*/}
           {isFocused() && (
             <span
-              class="terminal-cursor absolute top-[5px] h-[1.2em] w-[0.6ch] bg-green animate-pulse"
+              class="terminal-cursor absolute top-[0px] h-[1.2em] w-[0.6ch] bg-green animate-pulse"
               style={{ left: mirrorWidth() + "px" }}
             />
           )}
