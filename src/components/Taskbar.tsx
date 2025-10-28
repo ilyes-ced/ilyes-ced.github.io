@@ -3,9 +3,9 @@ import { setStore, store, toggleMinMax } from "../store";
 import { Apps } from "./Apps";
 import { createSignal, onCleanup, onMount } from "solid-js";
 import StartMenu from "./startMenu";
-import { FaSolidChevronUp } from "solid-icons/fa";
 import Calendar from "./Calendar";
 import windowsLogo from "/src/assets/logos/windows.png";
+import { IconChevronUp } from "@tabler/icons-solidjs";
 
 export default function Taskbar() {
   const [time, setTime] = createSignal(new Date());
@@ -39,7 +39,7 @@ export default function Taskbar() {
   };
 
   return (
-    <div class="bg-[#ffffff10] h-12 flex flex-row backdrop-blur-md px-4 py-0.5 space-x-2 z-50">
+    <div id="taskBar">
       <button
         id="startButton"
         onClick={() => setStore("showStartMenu", !store.showStartMenu)}
@@ -110,7 +110,7 @@ export default function Taskbar() {
         onClick={() => setStore("showLangMenu", !store.showLangMenu)}
         class="h-full text-xs text-foreground flex px-4 items-center justify-center min-w-fit space-x-2  cursor-pointer  w-fit p-2  hover:bg-black/30 active:bg-black/50 transition-all duration-200 ease-in-out rounded-sm"
       >
-        <FaSolidChevronUp />
+        <IconChevronUp />
         <p>{store.lang}</p>
       </div>
       <div

@@ -1,7 +1,6 @@
 import { createSignal, onMount, For, JSX } from "solid-js";
 import { store } from "../../store";
-import { AiFillGithub } from "solid-icons/ai";
-import { AiOutlineCaretRight } from "solid-icons/ai";
+import { IconBrandGithub } from "@tabler/icons-solidjs";
 
 interface TerminalLine {
   text: string;
@@ -154,7 +153,7 @@ export default function Terminal() {
           href="https://github.com/ilyes-ced"
           target="_blank"
         >
-          <AiFillGithub />
+          <IconBrandGithub />
           <p>https://github.com/ilyes-ced</p>
         </a>
       </div>
@@ -212,7 +211,7 @@ export default function Terminal() {
         href="https://github.com/ilyes-ced"
         target="_blank"
       >
-        <AiFillGithub />
+        <IconBrandGithub />
         <p>linkedin url goes here</p>
       </a>
     ),

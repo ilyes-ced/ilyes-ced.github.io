@@ -17,6 +17,7 @@ interface GlobalStore {
   lang: "En" | "Fr";
   langTexts: Record<string, string>;
   wallpaper: string;
+  theme: "default" | "custom";
 }
 
 const [store, setStore] = createStore<GlobalStore>({
@@ -30,6 +31,7 @@ const [store, setStore] = createStore<GlobalStore>({
   lang: "En",
   langTexts: frenchLang,
   wallpaper: winn11_3,
+  theme: "custom",
 });
 
 createEffect(() => {

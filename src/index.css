@@ -98,3 +98,18 @@ body,
 .group:hover .bg-fill {
   transform: scaleX(1);
 }
+
+#startMenu {
+  @apply w-[800px] flex flex-col border border-border overflow-y-auto rounded-xl bg-black/50;
+}
+/*  */
+#taskBar {
+  @apply bg-[#ffffff10] h-12 flex flex-row backdrop-blur-md px-4 py-0.5 space-x-2 z-50;
+}
+/*  */
+.window {
+  @apply flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto bg-black/75 backdrop-blur-3xl;
+}
+.defaultWindow {
+  @apply flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto bg-[#191919] backdrop-blur-3xl;
+}

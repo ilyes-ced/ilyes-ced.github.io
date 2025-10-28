@@ -1,5 +1,3 @@
-import { AiFillGithub } from "solid-icons/ai";
-import { IoDocumentSharp } from "solid-icons/io";
 import { For } from "solid-js";
 import { store } from "../../../store";
 
@@ -22,6 +20,11 @@ import postgresLogo from "/src/assets/logos/postgres.png";
 import mongodbLogo from "/src/assets/logos/mongodb.png";
 import archLogo from "/src/assets/arch.png";
 import windowsLogo from "/src/assets/logos/windows.png";
+import {
+  IconBrandGithub,
+  IconFileCv,
+  IconFileCvFilled,
+} from "@tabler/icons-solidjs";
 
 //  rust js/ts nodejs java python php dart
 const Langlogos = [
@@ -150,7 +153,7 @@ export default function () {
             href="https://github.com/ilyes-ced"
             target="_blank"
           >
-            <AiFillGithub />
+            <IconBrandGithub />
             <p>{store.langTexts.downResume}</p>
           </a>
           <a
@@ -158,7 +161,7 @@ export default function () {
             href="https://github.com/ilyes-ced"
             target="_blank"
           >
-            <IoDocumentSharp />
+            <IconFileCv />
             <p>{store.langTexts.viewProjects}</p>
           </a>
         </div>

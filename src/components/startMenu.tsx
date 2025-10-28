@@ -1,7 +1,7 @@
-import { AiOutlinePoweroff } from "solid-icons/ai";
 import { store } from "../store";
 import { createEffect, For } from "solid-js";
 import { Apps } from "./Apps";
+import { IconPower } from "@tabler/icons-solidjs";
 
 export default function () {
   let inputRef!: HTMLInputElement;
@@ -13,10 +13,7 @@ export default function () {
   });
 
   return (
-    <div
-      id="startMenu"
-      class="w-[800px]  flex flex-col border border-border overflow-y-auto rounded-xl bg-black/50"
-    >
+    <div id="startMenu" class="">
       <div class="p-8">
         <input
           ref={inputRef}
@@ -84,7 +81,7 @@ export default function () {
         </div>
 
         <button class="hover:bg-blue-300/10 cursor-pointer p-2 rounded-md">
-          <AiOutlinePoweroff size={24} />
+          <IconPower size={24} />
         </button>
       </div>
     </div>

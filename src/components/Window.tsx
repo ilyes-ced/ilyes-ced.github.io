@@ -1,11 +1,7 @@
-import { createSignal, onMount, onCleanup } from "solid-js";
+import { createSignal, onMount, onCleanup, Show } from "solid-js";
 
-import {
-  FaRegularWindowMinimize,
-  FaRegularWindowMaximize,
-} from "solid-icons/fa";
-import { IoCloseSharp } from "solid-icons/io";
 import { setStore, store, toggleMinMax } from "../store";
+import { IconMinus, IconAppWindow, IconX } from "@tabler/icons-solidjs";
 
 export default function Window(props: any) {
   // Position and size signals
@@ -113,7 +109,7 @@ export default function Window(props: any) {
     <div
       onClick={() => setStore("focusedApp", props.app.name)}
       ref={windowRef}
-      class="window flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto  bg-black/75 backdrop-blur-3xl "
+      class={store.theme === "custom" ? "window" : "defaultWindow"}
       style={{
         width: props.app.windowState.max ? "100%" : `${size().w}px`,
         height: props.app.windowState.max ? "100%" : `${size().h}px`,
@@ -130,43 +126,19 @@ export default function Window(props: any) {
       {/* Title Bar */}
       <div
         id="titlebar"
-        class="flex flex-row justify-between cursor-move px-2 border-b border-border"
+        class="flex flex-row justify-between cursor-move  border-b border-border"
         onMouseDown={onTitleMouseDown}
         onDblClick={() => toggleMinMax(props.app.name, "max")}
       >
-        <div id="title" class="p-2 font-bold ">
+        <div id="title" class="p-2 font-bold">
           {props.app.name}
         </div>
-        <div id="window_buttons" class="flex flex-row space-x-2 items-center">
-          <div
-            id="minimize"
-            onClick={() => toggleMinMax(props.app.name, "min")}
-            class="group/min cursor-pointer rounded bg-blue-300 aspect-4/1 h-6 flex items-center justify-center"
-          >
-            <FaRegularWindowMinimize class="opacity-0 group-hover/min:opacity-100 pointer-events-none group-hover/min:pointer-events-auto transition-all duration-200 ease-in-out" />
-          </div>
-          <div
-            id="maximize"
-            onClick={() => toggleMinMax(props.app.name, "max")}
-            class="group/max cursor-pointer rounded bg-blue-600 aspect-4/1 h-6 flex items-center justify-center"
-          >
-            <FaRegularWindowMaximize class="opacity-0 group-hover/max:opacity-100 pointer-events-none group-hover/max:pointer-events-auto transition-all duration-200 ease-in-out" />
-          </div>
-          <div
-            id="close"
-            onClick={() => {
-              setStore("activeApps", (apps) =>
-                apps.filter((app) => app.name !== props.app.name)
-              );
-            }}
-            class="group/close cursor-pointer rounded bg-blue-900 aspect-4/1 h-6 flex items-center justify-center"
-          >
-            <IoCloseSharp
-              class="opacity-0 group-hover/close:opacity-100 pointer-events-none group-hover/close:pointer-events-auto transition-all duration-200 ease-in-out"
-              size={24}
-            />
-          </div>
-        </div>
+        <Show
+          when={store.theme === "default"}
+          fallback={<CustomButtons appName={props.app.name as string} />}
+        >
+          <DefaultButtons appName={props.app.name as string} />
+        </Show>
       </div>
 
       <div id="windowContent" class="windowScoll flex-grow h-max text-black">
@@ -225,3 +197,78 @@ export default function Window(props: any) {
     </div>
   );
 }
+
+const CustomButtons = (props: { appName: string }) => {
+  return (
+    <div id="window_buttons" class="flex flex-row space-x-2 items-center pr-2">
+      <div
+        id="minimize"
+        onClick={() => toggleMinMax(props.appName, "min")}
+        class="group/min cursor-pointer rounded bg-blue-300 aspect-4/1 h-6 flex items-center justify-center"
+      >
+        <IconMinus class="opacity-0 group-hover/min:opacity-100 pointer-events-none group-hover/min:pointer-events-auto transition-all duration-200 ease-in-out" />
+      </div>
+      <div
+        id="maximize"
+        onClick={() => toggleMinMax(props.appName, "max")}
+        class="group/max cursor-pointer rounded bg-blue-600 aspect-4/1 h-6 flex items-center justify-center"
+      >
+        <IconAppWindow class="opacity-0 group-hover/max:opacity-100 pointer-events-none group-hover/max:pointer-events-auto transition-all duration-200 ease-in-out" />
+      </div>
+      <div
+        id="close"
+        onClick={() => {
+          setStore("activeApps", (apps) =>
+            apps.filter((app) => app.name !== props.appName)
+          );
+        }}
+        class="group/close cursor-pointer rounded bg-blue-900 aspect-4/1 h-6 flex items-center justify-center"
+      >
+        <IconX
+          class="opacity-0 group-hover/close:opacity-100 pointer-events-none group-hover/close:pointer-events-auto transition-all duration-200 ease-in-out"
+          size={24}
+        />
+      </div>
+    </div>
+  );
+};
+
+const DefaultButtons = (props: { appName: string }) => {
+  return (
+    <div id="window_buttons" class=" flex flex-row space-x-2 items-center">
+      <div
+        id="minimize"
+        onClick={(e) => {
+          console.log(e);
+          console.log("==============================");
+          toggleMinMax(props.appName, "min");
+        }}
+        class="cursor-pointer hover:bg-border aspect-4/3 flex items-center justify-center h-full"
+      >
+        <IconMinus />
+      </div>
+      <div
+        id="maximize"
+        onClick={(e) => {
+          console.log(e);
+          console.log("==============================");
+          toggleMinMax(props.appName, "max");
+        }}
+        class="cursor-pointer hover:bg-blue aspect-4/3 flex items-center justify-center h-full"
+      >
+        <IconAppWindow />
+      </div>
+      <div
+        id="close"
+        onClick={() => {
+          setStore("activeApps", (apps) =>
+            apps.filter((app) => app.name !== props.appName)
+          );
+        }}
+        class="cursor-pointer hover:bg-red aspect-4/3 flex items-center justify-center h-full"
+      >
+        <IconX size={24} />
+      </div>
+    </div>
+  );
+};

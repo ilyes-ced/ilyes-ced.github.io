@@ -2,8 +2,7 @@ import Calendar from "@corvu/calendar";
 import { Index } from "solid-js";
 import type { VoidComponent } from "solid-js";
 import "../cal.css";
-
-import { AiOutlineLeft, AiOutlineRight } from "solid-icons/ai";
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-solidjs";
 
 const CalendarExample: VoidComponent = () => {
   return (
@@ -17,7 +16,7 @@ const CalendarExample: VoidComponent = () => {
                 aria-label="Go to previous month"
                 class="size-7 rounded-sm bg-corvu-200/50 p-1.25 hover:bg-corvu-200 cursor-pointer"
               >
-                <AiOutlineLeft size="18" />
+                <IconArrowLeft size="18" />
               </Calendar.Nav>
               <Calendar.Label class="text-sm">
                 {formatMonth(props.month)} {props.month.getFullYear()}
@@ -27,7 +26,7 @@ const CalendarExample: VoidComponent = () => {
                 aria-label="Go to next month"
                 class="size-7 rounded-sm bg-corvu-200/50 p-1.25 hover:bg-corvu-200 cursor-pointer"
               >
-                <AiOutlineRight size="18" />
+                <IconArrowRight size="18" />
               </Calendar.Nav>
             </div>
             <Calendar.Table class="mt-3">

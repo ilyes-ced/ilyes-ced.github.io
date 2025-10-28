@@ -1,17 +1,7 @@
-import {
-  Accessor,
-  createEffect,
-  createSignal,
-  For,
-  Match,
-  Show,
-  Switch,
-} from "solid-js";
-import Terminal from "./apps/Terminal";
+import { createSignal, For } from "solid-js";
 import Window from "./Window";
 import DesktopIcon from "./DesktopIcon";
 import { store } from "../store";
-import Gui from "./apps/Gui";
 import { Apps } from "./Apps";
 import pacmanLogo from "/src/assets/logos/pacman.png";
 

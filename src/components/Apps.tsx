@@ -3,7 +3,7 @@ import Gui from "./apps/Gui";
 import Terminal from "./apps/Terminal";
 import TerminalIcon from "/src/assets/Windows_Terminal.svg";
 import TetrisIcon from "/src/assets/tetris.png";
-import GuiIcon from "/src/assets/gui.png";
+import GuiIcon from "/src/assets/thisPC.png";
 import Wallpapers from "./apps/Wallpapers";
 import Wikipedia from "./apps/Wikipedia";
 import Tetris from "./apps/Tetris";
@@ -24,6 +24,8 @@ import Chrome from "./apps/Chrome";
 import { store } from "../store";
 import MSpaint from "./apps/MSpaint";
 import Minesweeper from "./apps/Minesweeper";
+
+//thisPC.png
 
 interface AppType {
   name: string;
