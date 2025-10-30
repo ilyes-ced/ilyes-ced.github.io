@@ -30,7 +30,7 @@ const Grid = () => {
     <div class="text-3xl font-bold">title</div>
     <div class="text-sm font-light">subtitle</div>
     
-    <div class="flex flex-wrap gap-x-2 gap-y-2">
+    <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
     <div class="px-2 py-1 bg-red rounded">lorem</div>
     <div class="px-2 py-1 bg-green rounded">lorem</div>
     <div class="px-2 py-1 bg-orange rounded">lorem ipsum</div>
@@ -46,7 +46,7 @@ const Grid = () => {
     voluptate minima error illo!
     </div>
     
-    <div class="flex flex-wrap gap-x-2 gap-y-2">
+    <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
     <div class="px-2 py-1 bg-red rounded">lorem</div>
     <div class="px-2 py-1 bg-green rounded">lorem</div>
     <div class="px-2 py-1 bg-orange rounded">lorem ipsum</div>
@@ -80,7 +80,7 @@ const TorrentCard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-orange rounded">Rust</div>
         <div class="px-2 py-1 bg-red rounded">Tokio</div>
         <div class="px-2 py-1 bg-green rounded">Network</div>
@@ -112,7 +112,7 @@ const MilanoteCard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2 text-sm">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end text-sm">
         <div class="px-2 py-1 bg-yellow rounded">Tauri</div>
         <div class="px-2 py-1 bg-blue rounded">SolidJS</div>
         <div class="px-2 py-1 bg-orange rounded">Rust</div>
@@ -143,7 +143,7 @@ const SlackCloneCard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-blue rounded">React</div>
         <div class="px-2 py-1 bg-green text-white rounded">Node.js</div>
         <div class="px-2 py-1 bg-background rounded">Express</div>
@@ -175,7 +175,7 @@ const ClickUpCloneCard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-yellow rounded">JavaScript</div>
         <div class="px-2 py-1 bg-background rounded">Express</div>
         <div class="px-2 py-1 bg-red rounded">EJS</div>
@@ -206,7 +206,7 @@ const ClassicGamesCard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-red text-white rounded">Svelte</div>
         <div class="px-2 py-1 bg-blue rounded">typescript</div>
         <div class="px-2 py-1 bg-purple rounded">Game</div>
@@ -234,7 +234,7 @@ const BrainfuckCard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-background text-white rounded">C</div>
         <div class="px-2 py-1 bg-green text-white rounded">CLI</div>
         <div class="px-2 py-1 bg-blue text-white rounded">Interpreter</div>
@@ -265,7 +265,7 @@ const RedditCloneCard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-blue rounded">React</div>
         <div class="px-2 py-1 bg-green rounded">Node.js</div>
         <div class="px-2 py-1 bg-yellow rounded">JWT Auth</div>
@@ -299,7 +299,7 @@ const ChatAppJavaCard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-orange rounded">Java</div>
         <div class="px-2 py-1 bg-blue rounded">JavaFX</div>
         <div class="px-2 py-1 bg-yellow rounded">MySQL</div>
@@ -331,7 +331,7 @@ const BlogsUICard = () => {
         </ul>
       </div>
 
-      <div class="flex flex-wrap gap-x-2 gap-y-2">
+      <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-blue text-white rounded">React</div>
         <div class="px-2 py-1 bg-green text-white rounded">TailwindCSS</div>
         <div class="px-2 py-1 bg-purple text-white rounded">Brutalist UI</div>

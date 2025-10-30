@@ -36,6 +36,8 @@ interface AppType {
     min: boolean;
     max: boolean;
   };
+  windowColor?: string;
+  topBarColor?: string;
 }
 
 const Apps: AppType[] = [
@@ -48,6 +50,8 @@ const Apps: AppType[] = [
       min: false,
       max: false,
     },
+    windowColor: "#090909",
+    topBarColor: "#050505",
   },
   {
     name: store.langTexts.portName,
@@ -58,6 +62,8 @@ const Apps: AppType[] = [
       min: false,
       max: false,
     },
+    windowColor: "#090909",
+    topBarColor: "#050505",
   },
   {
     name: store.langTexts.tetrisName,

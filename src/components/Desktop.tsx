@@ -106,9 +106,6 @@ export default function Desktop(): {
               icon={activeApp.icon}
               x={x}
               y={y}
-              onDblClick={() => {
-                console.log("================================");
-              }}
             />
           );
         }}

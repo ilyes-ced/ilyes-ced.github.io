@@ -49,7 +49,7 @@ body,
   --color-mint-500: oklch(0.72 0.9 200);
   --color-background: oklch(0.141 0.005 285.823);
   --color-foreground: oklch(0.985 0 0);
-  --color-border: oklch(21% 0.034 264.665);
+  --color-border: oklch(1 0 0 / 0.1); /* oklch(21% 0.034 264.665); */
 
   --color-orange: oklch(0.646 0.222 41.116);
   --color-blue: oklch(0.488 0.243 264.376);
@@ -106,10 +106,16 @@ body,
 #taskBar {
   @apply bg-[#ffffff10] h-12 flex flex-row backdrop-blur-md px-4 py-0.5 space-x-2 z-50;
 }
-/*  */
+
+/* 
 .window {
   @apply flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto bg-black/75 backdrop-blur-3xl;
 }
 .defaultWindow {
   @apply flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto bg-[#191919] backdrop-blur-3xl;
+}
+*/
+
+.window {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }

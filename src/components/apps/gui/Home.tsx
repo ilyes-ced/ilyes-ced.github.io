@@ -154,7 +154,7 @@ export default function () {
             target="_blank"
           >
             <IconBrandGithub />
-            <p>{store.langTexts.downResume}</p>
+            <p>{store.langTexts.viewProjects}</p>
           </a>
           <a
             class="btn border border-border px-4 py-2 rounded bg-background/75 hover:bg-background/10 transition-colors duration-200 ease-in-out flex items-center space-x-2"
@@ -162,7 +162,7 @@ export default function () {
             target="_blank"
           >
             <IconFileCv />
-            <p>{store.langTexts.viewProjects}</p>
+            <p>{store.langTexts.downResume}</p>
           </a>
         </div>
       </div>

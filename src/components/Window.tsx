@@ -1,7 +1,12 @@
 import { createSignal, onMount, onCleanup, Show } from "solid-js";
 
 import { setStore, store, toggleMinMax } from "../store";
-import { IconMinus, IconAppWindow, IconX } from "@tabler/icons-solidjs";
+import {
+  IconMinus,
+  IconAppWindow,
+  IconX,
+  IconSquare,
+} from "@tabler/icons-solidjs";
 
 export default function Window(props: any) {
   // Position and size signals
@@ -109,7 +114,7 @@ export default function Window(props: any) {
     <div
       onClick={() => setStore("focusedApp", props.app.name)}
       ref={windowRef}
-      class={store.theme === "custom" ? "window" : "defaultWindow"}
+      class="window flex flex-col w-[1000px] h-[800px] absolute border border-border overflow-y-auto backdrop-blur-3xl"
       style={{
         width: props.app.windowState.max ? "100%" : `${size().w}px`,
         height: props.app.windowState.max ? "100%" : `${size().h}px`,
@@ -117,9 +122,13 @@ export default function Window(props: any) {
         top: props.app.windowState.max ? "0px" : `${pos().y}px`,
         position: "absolute",
         "z-index": store.focusedApp === props.app.name ? "10" : "",
+        background:
+          store.theme === "custom"
+            ? "#000000BF"
+            : props.app.windowColor ?? "#101010",
       }}
       classList={{
-        "rounded-xl": !props.app.windowState.max,
+        "rounded-lg": !props.app.windowState.max,
         "opacity-0 pointer-events-none": props.app.windowState.min,
       }}
     >
@@ -129,6 +138,10 @@ export default function Window(props: any) {
         class="flex flex-row justify-between cursor-move  border-b border-border"
         onMouseDown={onTitleMouseDown}
         onDblClick={() => toggleMinMax(props.app.name, "max")}
+        style={{
+          background:
+            store.theme === "custom" ? "" : props.app.topBarColor ?? "#101010",
+        }}
       >
         <div id="title" class="p-2 font-bold">
           {props.app.name}
@@ -140,11 +153,9 @@ export default function Window(props: any) {
           <DefaultButtons appName={props.app.name as string} />
         </Show>
       </div>
-
       <div id="windowContent" class="windowScoll flex-grow h-max text-black">
         {props.children}
       </div>
-
       {/* Resize handles */}
       {/* Bottom Left */}
       <div
@@ -213,7 +224,7 @@ const CustomButtons = (props: { appName: string }) => {
         onClick={() => toggleMinMax(props.appName, "max")}
         class="group/max cursor-pointer rounded bg-blue-600 aspect-4/1 h-6 flex items-center justify-center"
       >
-        <IconAppWindow class="opacity-0 group-hover/max:opacity-100 pointer-events-none group-hover/max:pointer-events-auto transition-all duration-200 ease-in-out" />
+        <IconSquare class="opacity-0 group-hover/max:opacity-100 pointer-events-none group-hover/max:pointer-events-auto transition-all duration-200 ease-in-out" />
       </div>
       <div
         id="close"
@@ -256,7 +267,7 @@ const DefaultButtons = (props: { appName: string }) => {
         }}
         class="cursor-pointer hover:bg-blue aspect-4/3 flex items-center justify-center h-full"
       >
-        <IconAppWindow />
+        <IconSquare />
       </div>
       <div
         id="close"

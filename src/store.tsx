@@ -31,7 +31,7 @@ const [store, setStore] = createStore<GlobalStore>({
   lang: "En",
   langTexts: frenchLang,
   wallpaper: winn11_3,
-  theme: "custom",
+  theme: "default",
 });
 
 createEffect(() => {

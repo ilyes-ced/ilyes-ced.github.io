@@ -72,6 +72,17 @@ export default function DesktopIcon(props: any) {
       onDblClick={() => {
         //TODO: fix this duplicates
         if (!store.activeApps.some((obj) => obj.name === props.name)) {
+          console.log(props.name);
+          if (props.name === "Github") {
+            window.open("https://github.com/ilyes-ced", "_blank");
+            return;
+          } else if (props.name === "LinkedIn") {
+            window.open("https://github.com/ilyes-ced", "_blank");
+            return;
+          } else if (props.name === "Email") {
+            window.open("ilyes@gmail.com", "_blank");
+            return;
+          }
           setStore("activeApps", (apps) => [
             ...apps,
             Apps.find((app) => app.name === props.name),
