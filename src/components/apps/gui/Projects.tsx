@@ -8,7 +8,7 @@ export default function () {
 const Grid = () => {
   return (
     <div class="flex justify-center">
-      <div class="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 place-items-center">
+      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 place-items-center">
         <TorrentCard />
         <MilanoteCard />
         <SlackCloneCard />
@@ -146,7 +146,7 @@ const SlackCloneCard = () => {
       <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-blue rounded">React</div>
         <div class="px-2 py-1 bg-green text-white rounded">Node.js</div>
-        <div class="px-2 py-1 bg-background rounded">Express</div>
+        <div class="px-2 py-1 bg-gray-800 rounded">Express</div>
         <div class="px-2 py-1 bg-yellow text-white rounded">Socket.io</div>
         <div class="px-2 py-1 bg-red text-white rounded">MySQL</div>
         <div class="px-2 py-1 bg-purple rounded">Full Stack</div>
@@ -177,7 +177,7 @@ const ClickUpCloneCard = () => {
 
       <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
         <div class="px-2 py-1 bg-yellow rounded">JavaScript</div>
-        <div class="px-2 py-1 bg-background rounded">Express</div>
+        <div class="px-2 py-1 bg-gray-800 rounded">Express</div>
         <div class="px-2 py-1 bg-red rounded">EJS</div>
         <div class="px-2 py-1 bg-blue rounded">tailwind</div>
       </div>
@@ -235,7 +235,7 @@ const BrainfuckCard = () => {
       </div>
 
       <div class="flex flex-wrap gap-x-2 gap-y-2 self-end">
-        <div class="px-2 py-1 bg-background text-white rounded">C</div>
+        <div class="px-2 py-1 bg-gray-900 text-white rounded">C</div>
         <div class="px-2 py-1 bg-green text-white rounded">CLI</div>
         <div class="px-2 py-1 bg-blue text-white rounded">Interpreter</div>
         <div class="px-2 py-1 bg-red text-white rounded">Low-level</div>

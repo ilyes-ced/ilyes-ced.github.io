@@ -23,7 +23,7 @@ export default function FileExplorer() {
   const [activePage, setActivePage] = createSignal(0);
 
   return (
-    <div class="size-full text-foreground flex flex-col ">
+    <div class="size-full text-foreground flex flex-col">
       <div class="flex space-x-2 h-12 w-full px-2 pt-2">
         <For each={pages}>
           {(page, index) => (

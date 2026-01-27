@@ -3,7 +3,6 @@
   "projects": "Projects",
   "experience": "Experience",
   "contact": "Contact me",
-
   "hey": "Hey there 👋",
   "iam": "I'm ilyes",
   "jobTitle": "Software Developer & Freelancer",
@@ -16,19 +15,16 @@
   "frameworks": "Frameworks",
   "databases": "Databases",
   "os": "Operating Systems",
-
   "education": "Education",
   "bachelor": "Bachelor's Degree in Information Thechnology",
   "y2022": "2022 at Universite Abdelhamid Mehri Constantine 2, Constantine, Algeria",
   "master": "Master's Degree in Information Thechnology",
   "y2025": " 2025 at Universite Abdelhamid Mehri Constantine 2, Constantine, Algeria",
-
   "intern0": "Internship, Port Annaba",
-  "intern1": "From April June 2024",
+  "intern1": "From April to June 2024",
   "intern2": "Learned about networks administration and configuration",
   "intern3": "Helped with the keeping the local network smooth and running",
   "intern4": "Installation of new networking hardware (fiber optics, switches, and firewalls) and extending the network to other departments of the Port",
-
   "torrentTitle": "Torrent client",
   "torrentSubtitle": "Torrent client implemented in Rust",
   "torrentDescription": "A fully custom BitTorrent client built from scratch in Rust, focused on performance, reliability, and learning how the BitTorrent protocol works under the hood.",
@@ -37,7 +33,6 @@
   "torrentFeatures2": "Piece downloading and file assembly",
   "torrentFeatures3": "Download resumption after interruption",
   "torrentFeatures4": "TUI (Terminal UI) for real-time download status",
-
   "milanoteTitle": "Productivity & Management App (WIP)",
   "milanoteSubtitle": "A customizable productivity and organization tool inspired by Milanote, Miro, and Kinopio.",
   "milanoteDescription": "Built from the ground up as a desktop app, this tool allows users to visually organize their thoughts, tasks, and projects using a drag-and-drop canvas. Key features include:",
@@ -47,7 +42,6 @@
   "milanoteFeatures3": "Supports a variety of node types: checklists, rich text notes, images, links, and more.",
   "milanoteFeatures4": "Plans for additional node types (e.g., media, Activity trackers, embeds)",
   "milanoteFeatures5": "Future roadmap includes encryption and advanced security features",
-
   "slackTitle": "Slack Clone",
   "slackSubtitle": "A real-time team chat app built with modern web tech",
   "slackDescription": "A communication platform inspired by Slack, designed for teams and collaboration. Includes real-time messaging, channels, and workspace management.",
@@ -56,7 +50,6 @@
   "slackFeatures2": "Rich text editor for chat input",
   "slackFeatures3": "User auth and session management",
   "slackFeatures4": "Dark/light mode toggle",
-
   "clickupTitle": "ClickUp Clone",
   "clickupSubtitle": "Project & task management platform built from scratch",
   "clickupDescription": "A productivity and collaboration tool inspired by ClickUp, designed to streamline task tracking, teamwork, and project organization.",
@@ -65,7 +58,6 @@
   "clickupFeatures2": "Boards, lists, and calendar views",
   "clickupFeatures1": "Comments, attachments, and team collaboration",
   "clickupFeatures0": "User authentication, profiles, permissions",
-
   "classicTitle": "Classic Games Collection",
   "classicSubtitle": "A collection of classic games built from scratch",
   "classicDescription": "A set of timeless games from the early days of using the computer re‑implemented in modern web technologies.",
@@ -74,14 +66,12 @@
   "classicFeatures2": "Responsive controls and game pacing",
   "classicFeatures3": "State management and rendering from scratch",
   "classicFeatures4": "Designed for learning fundamental game dev concepts",
-
   "brainfuckTitle": "Brainf*ck Interpreter",
   "brainfuckSubtitle": "A minimal Brainf*ck language interpreter written in C",
   "brainfuckDescription": "A lightweight and efficient interpreter for the esoteric Brainf*ck programming language, written from scratch in C.",
   "brainfuckFeatures0": "Parses and executes Brainf*ck commands",
   "brainfuckFeatures1": "Memory tape and pointer simulation",
   "brainfuckFeatures2": "Simple CLI interface",
-
   "redditTitle": "Reddit Clone",
   "redditSubtitle": "A full-stack Reddit clone with modern web technologies",
   "redditDescription": "A feature-rich Reddit clone replicating core functionalities using modern web technologies.",
@@ -90,7 +80,6 @@
   "redditFeatures2": "Commenting with nested threads",
   "redditFeatures3": "Upvoting and downvoting posts and comments",
   "redditFeatures4": "User authentication and profile management",
-
   "chatAppJavaTitle": "Java Multi-Client Chat App",
   "chatAppJavaSubtitle": "A real-time chat application built with JavaFX and MySQL",
   "chatAppJavaDescription": "A desktop chat application supporting multiple clients, featuring real-time messaging and a MySQL database backend.",
@@ -99,7 +88,6 @@
   "chatAppJavaFeatures2": "Message history stored in MySQL database",
   "chatAppJavaFeatures3": "Active user list with status updates",
   "chatAppJavaFeatures4": "Logout functionality",
-
   "blogsUITitle": "Blogs UI",
   "blogsUISubtitle": "A minimal blog interface showcasing a brutalist UI design",
   "blogsUIDescription": "A simple and clean blog interface built with React, Vite, and TailwindCSS, perfect for showcasing blog posts in a responsive and modern UI.",
@@ -108,16 +96,13 @@
   "blogsUIFeatures2": "Styled with TailwindCSS for fast and responsive design",
   "blogsUIFeatures3": "Fast development with Vite and hot module replacement",
   "blogsUIFeatures4": "Responsive design for desktop and mobile devices",
-
   "contact0": " Have a project idea, a question, or just want to say hello?",
   "contact1": " I'm always open to chatting about software, tech, or potential collaborations.",
   "contact2": "Drop me a message — I'll get back to you as soon as I can.",
-
   "Subject": "Subject",
   "Email": "Email",
   "Message": "Message",
   "Send": "Send",
-
   "torrentDescriptionShort": "Torrent client implemented in Rust",
   "milanoteDescriptionShort": "A customizable productivity and organization tool inspired by Milanote, Miro, and Kinopio.",
   "slackDescriptionShort": "A real-time team chat app built with modern web tech",
@@ -127,12 +112,10 @@
   "redditDescriptionShort": "A full-stack Reddit clone with modern web technologies",
   "chatAppJavaDescriptionShort": "A real-time chat application built with JavaFX and MySQL",
   "blogsUIDescriptionShort": "A real-time chat application built with JavaFX and MySQL",
-
   "welcomeTerm": "Welcome to my portfolio terminal",
   "help": "help",
   "type": "Type",
   "seeCommands": " to see available commands.",
-
   "systemCommand": "System commands",
   "helpCommand": "Display available commands",
   "clearCommand": "Clear the terminal",
@@ -146,15 +129,12 @@
   "githubCommand": "Go to my github profile",
   "linkedinCommand": "Go to my linkedin profile",
   "redirecting": "Redirecting you to",
-
   "project": "Project",
   "description": "Description",
   "resume": "Resume",
   "setWallpaper": "Set as Wallpaper",
-
   "appsMenu": "Apps Menu",
   "recommended": "Recommended",
-
   "termName": "Terminal",
   "termDesc": "Portfolio in CLI format",
   "portName": "Ilyes",
@@ -181,7 +161,6 @@
   "paintDesc": "original microsoft drawing tool",
   "minesweeperName": "minesweeper",
   "minesweeperDesc": "OG microsoft minesweeper game",
-
   "homeTab": "Home",
   "projectsTab": "Projects",
   "experienceTab": "Experience",
