@@ -45,7 +45,7 @@ export default function App() {
     <Switch fallback={<div>Not Found</div>}>
       <Match when={detectMobileDevice()}>
         <div class="overflow-y-scroll">
-          <div class="m-2 mb-0 p-4 bg-red rounded-xl">this site is best viewed on a PC</div>
+          <div class="m-2 mb-0 p-4 bg-red rounded-xl">This website is best viewed on a PC</div>
           {Apps[1].component}
         </div>
       </Match>

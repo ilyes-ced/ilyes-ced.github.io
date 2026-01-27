@@ -3,7 +3,7 @@ import Window from "./Window";
 import DesktopIcon from "./DesktopIcon";
 import { store } from "../store";
 import { Apps } from "./Apps";
-import pacmanLogo from "/src/assets/logos/pacman.png";
+import { IconTool } from "@tabler/icons-solidjs";
 
 export default function Desktop(): {
   bottom: number;
@@ -62,36 +62,27 @@ export default function Desktop(): {
           top: pos().y + "px",
           left: pos().x + "px",
         }}
-        class="absolute p-2 w-[300px] flex flex-col overflow-y-auto rounded-lg bg-blue-900/20 backdrop-blur-3xl transition-opacity duration-150 ease-in-out z-[1000] space-y-1"
+        class="absolute p-2 w-[300px] flex flex-col overflow-y-auto rounded-lg bg-blue-900/20 backdrop-blur-3xl transition-opacity duration-150 ease-in-out z-[1000] space-y-1 border border-border"
         classList={{
           "opacity-0 pointer-events-none": !contextMenu(),
           "opacity-100": contextMenu(),
         }}
       >
-        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img src={pacmanLogo} class="size-4 aspect-square" />
-          <p>adding options here later</p>
+        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2">
+          <IconTool class="size-4 aspect-square" />
+          <p>Not implemented yet</p>
         </div>
-        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img src={pacmanLogo} class="size-4 aspect-square" />
-          <p>adding options here later</p>
+        <div class="border border-border w-11/12 self-center"></div>
+        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2">
+          <IconTool class="size-4 aspect-square" />
+          <p>Not implemented yet</p>
         </div>
-        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img src={pacmanLogo} class="size-4 aspect-square" />
-          <p>adding options here later</p>
+        <div class="border border-border w-11/12 self-center"></div>
+        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2">
+          <IconTool class="size-4 aspect-square" />
+          <p>Not implemented yet</p>
         </div>
-        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img src={pacmanLogo} class="size-4 aspect-square" />
-          <p>adding options here later</p>
-        </div>
-        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img src={pacmanLogo} class="size-4 aspect-square" />
-          <p>adding options here later</p>
-        </div>
-        <div class="px-2 py-1 hover:bg-blue-300/10 rounded-lg cursor-pointer flex items-center space-x-2 ">
-          <img src={pacmanLogo} class="size-4 aspect-square" />
-          <p>adding options here later</p>
-        </div>
+
       </div>
 
       <For each={Apps}>
