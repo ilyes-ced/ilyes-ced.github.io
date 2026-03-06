@@ -1,4 +1,4 @@
-import { store } from "../../../store";
+import { langTexts, store } from "../../../store";
 
 export default function () {
   return (
@@ -7,13 +7,13 @@ export default function () {
         <div class="size-4 rounded-full bg-blue"></div>
       </div>
       <div class="flex flex-col justify-between pl-4">
-        <h3 class="font-semibold mb-1">{store.langTexts.intern0}</h3>
-        <span class="font-light text-sm">{store.langTexts.intern1}</span>
+        <h3 class="font-semibold mb-1">{langTexts().intern0}</h3>
+        <span class="font-light text-sm">{langTexts().intern1}</span>
         <p class="my-2 text-justify"></p>
         <ul class="list-disc pl-4">
-          <li>{store.langTexts.intern2}</li>
-          <li>{store.langTexts.intern3}</li>
-          <li>{store.langTexts.intern4}</li>
+          <li>{langTexts().intern2}</li>
+          <li>{langTexts().intern3}</li>
+          <li>{langTexts().intern4}</li>
         </ul>
       </div>
     </div>

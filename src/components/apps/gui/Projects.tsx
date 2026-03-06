@@ -1,4 +1,4 @@
-import { store } from "../../../store";
+import { langTexts, store } from "../../../store";
 
 export default function () {
   return <Grid />;
@@ -26,7 +26,7 @@ const Grid = () => {
 /**
  const Card = () => {
   return (
-    <div class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full">
+    <div class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full">
     <div class="text-3xl font-bold">title</div>
     <div class="text-sm font-light">subtitle</div>
     
@@ -64,19 +64,19 @@ const TorrentCard = () => {
     <a
       href="https://github.com/ilyes-ced/torrent"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.torrentTitle}</div>
-      <div class="text-sm font-light">{store.langTexts.torrentSubtitle}</div>
+      <div class="text-3xl font-bold">{langTexts().torrentTitle}</div>
+      <div class="text-sm font-light">{langTexts().torrentSubtitle}</div>
 
       <div class="">
-        {store.langTexts.torrentDescription}
+        {langTexts().torrentDescription}
         <ul class="list-disc list-inside pl-4">
-          <li>{store.langTexts.torrentFeatures0}</li>
-          <li>{store.langTexts.torrentFeatures1}</li>
-          <li>{store.langTexts.torrentFeatures2}</li>
-          <li>{store.langTexts.torrentFeatures3}</li>
-          <li>{store.langTexts.torrentFeatures4}</li>
+          <li>{langTexts().torrentFeatures0}</li>
+          <li>{langTexts().torrentFeatures1}</li>
+          <li>{langTexts().torrentFeatures2}</li>
+          <li>{langTexts().torrentFeatures3}</li>
+          <li>{langTexts().torrentFeatures4}</li>
         </ul>
       </div>
 
@@ -95,20 +95,20 @@ const MilanoteCard = () => {
     <a
       href="https://github.com/ilyes-ced/graphNote"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.milanoteTitle} </div>
-      <div class="text-sm font-light">{store.langTexts.milanoteSubtitle}</div>
+      <div class="text-3xl font-bold">{langTexts().milanoteTitle} </div>
+      <div class="text-sm font-light">{langTexts().milanoteSubtitle}</div>
 
       <div class="text-sm leading-relaxed">
-        {store.langTexts.milanoteDescription}
+        {langTexts().milanoteDescription}
         <ul class="list-disc list-inside pl-4 mt-1">
-          <li>{store.langTexts.milanoteFeatures0}</li>
-          <li>{store.langTexts.milanoteFeatures1}</li>
-          <li>{store.langTexts.milanoteFeatures2}</li>
-          <li>{store.langTexts.milanoteFeatures3}</li>
-          <li>{store.langTexts.milanoteFeatures4}</li>
-          <li>{store.langTexts.milanoteFeatures5} </li>
+          <li>{langTexts().milanoteFeatures0}</li>
+          <li>{langTexts().milanoteFeatures1}</li>
+          <li>{langTexts().milanoteFeatures2}</li>
+          <li>{langTexts().milanoteFeatures3}</li>
+          <li>{langTexts().milanoteFeatures4}</li>
+          <li>{langTexts().milanoteFeatures5} </li>
         </ul>
       </div>
 
@@ -127,19 +127,19 @@ const SlackCloneCard = () => {
     <a
       href="https://github.com/ilyes-ced/slack_clone"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.slackTitle}</div>
-      <div class="text-sm font-light">{store.langTexts.slackSubtitle} </div>
+      <div class="text-3xl font-bold">{langTexts().slackTitle}</div>
+      <div class="text-sm font-light">{langTexts().slackSubtitle} </div>
 
       <div class="">
-        {store.langTexts.slackDescription}
+        {langTexts().slackDescription}
         <ul class="list-disc list-inside pl-4">
-          <li>{store.langTexts.slackFeatures0} </li>
-          <li>{store.langTexts.slackFeatures1} </li>
-          <li>{store.langTexts.slackFeatures2} </li>
-          <li>{store.langTexts.slackFeatures3} </li>
-          <li>{store.langTexts.slackFeatures4} </li>
+          <li>{langTexts().slackFeatures0} </li>
+          <li>{langTexts().slackFeatures1} </li>
+          <li>{langTexts().slackFeatures2} </li>
+          <li>{langTexts().slackFeatures3} </li>
+          <li>{langTexts().slackFeatures4} </li>
         </ul>
       </div>
 
@@ -159,19 +159,19 @@ const ClickUpCloneCard = () => {
     <a
       href="https://github.com/ilyes-ced/clickup_clone"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.clickupTitle}</div>
-      <div class="text-sm font-light">{store.langTexts.clickupSubtitle}</div>
+      <div class="text-3xl font-bold">{langTexts().clickupTitle}</div>
+      <div class="text-sm font-light">{langTexts().clickupSubtitle}</div>
 
       <div class="">
-        {store.langTexts.clickupDescription}
+        {langTexts().clickupDescription}
         <ul class="list-disc list-inside pl-4">
-          <li>{store.langTexts.clickupFeatures4} </li>
-          <li>{store.langTexts.clickupFeatures3} </li>
-          <li>{store.langTexts.clickupFeatures2} </li>
-          <li>{store.langTexts.clickupFeatures1} </li>
-          <li>{store.langTexts.clickupFeatures0} </li>
+          <li>{langTexts().clickupFeatures4} </li>
+          <li>{langTexts().clickupFeatures3} </li>
+          <li>{langTexts().clickupFeatures2} </li>
+          <li>{langTexts().clickupFeatures1} </li>
+          <li>{langTexts().clickupFeatures0} </li>
         </ul>
       </div>
 
@@ -190,19 +190,19 @@ const ClassicGamesCard = () => {
     <a
       href="https://github.com/ilyes-ced/classic_games"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.classicTitle}</div>
-      <div class="text-sm font-light">{store.langTexts.classicSubtitle} </div>
+      <div class="text-3xl font-bold">{langTexts().classicTitle}</div>
+      <div class="text-sm font-light">{langTexts().classicSubtitle} </div>
 
       <div class="">
-        {store.langTexts.classicDescription}
+        {langTexts().classicDescription}
         <ul class="list-disc list-inside pl-4">
-          <li>{store.langTexts.classicFeatures0} </li>
-          <li>{store.langTexts.classicFeatures1}</li>
-          <li>{store.langTexts.classicFeatures2} </li>
-          <li>{store.langTexts.classicFeatures3}</li>
-          <li>{store.langTexts.classicFeatures4} </li>
+          <li>{langTexts().classicFeatures0} </li>
+          <li>{langTexts().classicFeatures1}</li>
+          <li>{langTexts().classicFeatures2} </li>
+          <li>{langTexts().classicFeatures3}</li>
+          <li>{langTexts().classicFeatures4} </li>
         </ul>
       </div>
 
@@ -220,17 +220,17 @@ const BrainfuckCard = () => {
     <a
       href="https://github.com/ilyes-ced/brainfuck"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.brainfuckTitle}</div>
-      <div class="text-sm font-light">{store.langTexts.brainfuckSubtitle}</div>
+      <div class="text-3xl font-bold">{langTexts().brainfuckTitle}</div>
+      <div class="text-sm font-light">{langTexts().brainfuckSubtitle}</div>
 
       <div class="">
-        {store.langTexts.brainfuckDescription}
+        {langTexts().brainfuckDescription}
         <ul class="list-disc list-inside pl-4 mt-1">
-          <li>{store.langTexts.brainfuckFeatures0} </li>
-          <li>{store.langTexts.brainfuckFeatures1} </li>
-          <li>{store.langTexts.brainfuckFeatures2}</li>
+          <li>{langTexts().brainfuckFeatures0} </li>
+          <li>{langTexts().brainfuckFeatures1} </li>
+          <li>{langTexts().brainfuckFeatures2}</li>
         </ul>
       </div>
 
@@ -249,19 +249,19 @@ const RedditCloneCard = () => {
     <a
       href="https://github.com/ilyes-ced/reddit"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.redditTitle}</div>
-      <div class="text-sm font-light">{store.langTexts.redditSubtitle}</div>
+      <div class="text-3xl font-bold">{langTexts().redditTitle}</div>
+      <div class="text-sm font-light">{langTexts().redditSubtitle}</div>
 
       <div class="">
-        {store.langTexts.redditDescription}
+        {langTexts().redditDescription}
         <ul class="list-disc list-inside pl-4 mt-1">
-          <li>{store.langTexts.redditFeatures0}</li>
-          <li>{store.langTexts.redditFeatures1}</li>
-          <li>{store.langTexts.redditFeatures2}</li>
-          <li>{store.langTexts.redditFeatures3}</li>
-          <li>{store.langTexts.redditFeatures4}</li>
+          <li>{langTexts().redditFeatures0}</li>
+          <li>{langTexts().redditFeatures1}</li>
+          <li>{langTexts().redditFeatures2}</li>
+          <li>{langTexts().redditFeatures3}</li>
+          <li>{langTexts().redditFeatures4}</li>
         </ul>
       </div>
 
@@ -281,21 +281,21 @@ const ChatAppJavaCard = () => {
     <a
       href="https://github.com/ilyes-ced/chat_app_java"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.chatAppJavaTitle}</div>
+      <div class="text-3xl font-bold">{langTexts().chatAppJavaTitle}</div>
       <div class="text-sm font-light">
-        {store.langTexts.chatAppJavaSubtitle}
+        {langTexts().chatAppJavaSubtitle}
       </div>
 
       <div class="">
-        {store.langTexts.chatAppJavaDescription}
+        {langTexts().chatAppJavaDescription}
         <ul class="list-disc list-inside pl-4 mt-1">
-          <li>{store.langTexts.chatAppJavaFeatures0}</li>
-          <li>{store.langTexts.chatAppJavaFeatures1}</li>
-          <li>{store.langTexts.chatAppJavaFeatures2}</li>
-          <li>{store.langTexts.chatAppJavaFeatures3}</li>
-          <li>{store.langTexts.chatAppJavaFeatures4}</li>
+          <li>{langTexts().chatAppJavaFeatures0}</li>
+          <li>{langTexts().chatAppJavaFeatures1}</li>
+          <li>{langTexts().chatAppJavaFeatures2}</li>
+          <li>{langTexts().chatAppJavaFeatures3}</li>
+          <li>{langTexts().chatAppJavaFeatures4}</li>
         </ul>
       </div>
 
@@ -315,19 +315,19 @@ const BlogsUICard = () => {
     <a
       href="https://github.com/ilyes-ced/blogs_ui"
       target="_blank"
-      class="border border-border p-4 hover:bg-border/30 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
+      class="border border-border p-4 hover:bg-border/50 hover:scale-101 transition-all duration-400 ease-in-out space-y-2 max-w-[400px] min-w-[300px] h-full"
     >
-      <div class="text-3xl font-bold">{store.langTexts.blogsUITitle}</div>
-      <div class="text-sm font-light">{store.langTexts.blogsUISubtitle}</div>
+      <div class="text-3xl font-bold">{langTexts().blogsUITitle}</div>
+      <div class="text-sm font-light">{langTexts().blogsUISubtitle}</div>
 
       <div class="">
-        {store.langTexts.blogsUIDescription}
+        {langTexts().blogsUIDescription}
         <ul class="list-disc list-inside pl-4 mt-1">
-          <li>{store.langTexts.blogsUIFeatures0}</li>
-          <li>{store.langTexts.blogsUIFeatures1}</li>
-          <li>{store.langTexts.blogsUIFeatures2}</li>
-          <li>{store.langTexts.blogsUIFeatures3}</li>
-          <li>{store.langTexts.blogsUIFeatures4}</li>
+          <li>{langTexts().blogsUIFeatures0}</li>
+          <li>{langTexts().blogsUIFeatures1}</li>
+          <li>{langTexts().blogsUIFeatures2}</li>
+          <li>{langTexts().blogsUIFeatures3}</li>
+          <li>{langTexts().blogsUIFeatures4}</li>
         </ul>
       </div>
 

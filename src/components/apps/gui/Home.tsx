@@ -1,5 +1,5 @@
 import { For } from "solid-js";
-import { store } from "../../../store";
+import { langTexts, store } from "../../../store";
 
 import rustLogo from "/src/assets/logos/rust.png";
 import jsLogo from "/src/assets/logos/js.png";
@@ -140,12 +140,12 @@ export default function () {
   return (
     <div class="size-full flex flex-col space-y-6 ">
       <div class="space-y-4">
-        <div class="text-xl">{store.langTexts.hey}</div>
-        <div class="text-5xl font-bold">{store.langTexts.iam}</div>
-        <div class="text-3xl font-bold">{store.langTexts.jobTitle}</div>
+        <div class="text-xl">{langTexts().hey}</div>
+        <div class="text-5xl font-bold">{langTexts().iam}</div>
+        <div class="text-3xl font-bold">{langTexts().jobTitle}</div>
         <div class="py-2">
-          <p class="text-lg">{store.langTexts.whoami2}</p>
-          <p class="text-lg mt-2">{store.langTexts.whoami2}</p>
+          <p class="text-lg">{langTexts().whoami1}</p>
+          <p class="text-lg mt-2">{langTexts().whoami2}</p>
         </div>
         <div class="flex gap-4">
           <a
@@ -154,7 +154,7 @@ export default function () {
             target="_blank"
           >
             <IconBrandGithub />
-            <p>{store.langTexts.viewProjects}</p>
+            <p>{langTexts().viewProjects}</p>
           </a>
           <a
             class="btn border border-border px-4 py-2 rounded bg-background/75 hover:bg-background/10 transition-colors duration-200 ease-in-out flex items-center space-x-2"
@@ -162,17 +162,17 @@ export default function () {
             target="_blank"
           >
             <IconFileCv />
-            <p>{store.langTexts.downResume}</p>
+            <p>{langTexts().downResume}</p>
           </a>
         </div>
       </div>
 
-      <h1 class="text-5xl font-extrabold">{store.langTexts.skills}</h1>
+      <h1 class="text-5xl font-extrabold">{langTexts().skills}</h1>
       <div class="">
         <div class="pl-4 space-y-2">
           <div class="">
             <h2 class="text-2xl font-extrabold py-4">
-              {store.langTexts.progLangs}
+              {langTexts().progLangs}
             </h2>
             <div class="pl-4 flex flex-wrap gap-2">
               <For each={Langlogos}>{(logo) => <Logo {...logo} />}</For>
@@ -181,7 +181,7 @@ export default function () {
 
           <div class="">
             <h2 class="text-2xl font-extrabold py-4">
-              {store.langTexts.frameworks}
+              {langTexts().frameworks}
             </h2>
             <div class="pl-4 flex flex-wrap gap-2">
               <For each={Frameworklogos}>
@@ -192,7 +192,7 @@ export default function () {
 
           <div class="">
             <h2 class="text-2xl font-extrabold py-4">
-              {store.langTexts.databases}
+              {langTexts().databases}
             </h2>
             <div class="pl-4 flex flex-wrap gap-2">
               <For each={Databaselogos}>
@@ -202,7 +202,7 @@ export default function () {
           </div>
 
           <div class="">
-            <h2 class="text-2xl font-extrabold py-4">{store.langTexts.os}</h2>
+            <h2 class="text-2xl font-extrabold py-4">{langTexts().os}</h2>
             <div class="pl-4 flex flex-wrap gap-2">
               <For each={OSs}>{(OS) => <Logo {...OS} />}</For>
             </div>
@@ -210,7 +210,7 @@ export default function () {
         </div>
       </div>
 
-      <h1 class="text-5xl font-extrabold">{store.langTexts.education}</h1>
+      <h1 class="text-5xl font-extrabold">{langTexts().education}</h1>
 
       <div class="pl-4 flex">
         <div class="pt-1">
@@ -220,13 +220,13 @@ export default function () {
         </div>
         <div class="flex flex-col justify-between pl-4">
           <div class="experience__data bd-grid">
-            <h3 class="font-semibold mb-1">{store.langTexts.bachelor}</h3>
-            <span class="font-light text-sm">{store.langTexts.y2022}</span>
+            <h3 class="font-semibold mb-1">{langTexts().bachelor}</h3>
+            <span class="font-light text-sm">{langTexts().y2022}</span>
             <p class="my-2 text-justify"></p>
           </div>
           <div class="experience__data bd-grid">
-            <h3 class="font-semibold mb-1">{store.langTexts.master}</h3>
-            <span class="font-light text-sm">{store.langTexts.y2025}</span>
+            <h3 class="font-semibold mb-1">{langTexts().master}</h3>
+            <span class="font-light text-sm">{langTexts().y2025}</span>
             <p class="my-2 text-justify"></p>
           </div>
         </div>

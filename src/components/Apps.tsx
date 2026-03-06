@@ -21,7 +21,7 @@ import Github from "./apps/Github";
 import Pacman from "./apps/Pacman";
 import Vscode from "./apps/Vscode";
 import Chrome from "./apps/Chrome";
-import { store } from "../store";
+import { langTexts, store } from "../store";
 import MSpaint from "./apps/MSpaint";
 import Minesweeper from "./apps/Minesweeper";
 
@@ -42,8 +42,8 @@ interface AppType {
 
 const Apps: AppType[] = [
   {
-    name: store.langTexts.termName,
-    description: store.langTexts.termDesc,
+    name: langTexts().termName,
+    description: langTexts().termDesc,
     component: <Terminal />,
     icon: TerminalIcon,
     windowState: {
@@ -54,8 +54,8 @@ const Apps: AppType[] = [
     topBarColor: "#050505",
   },
   {
-    name: store.langTexts.portName,
-    description: store.langTexts.portDesc,
+    name: langTexts().portName,
+    description: langTexts().portDesc,
     component: <Gui />,
     icon: GuiIcon,
     windowState: {
@@ -66,8 +66,8 @@ const Apps: AppType[] = [
     topBarColor: "#050505",
   },
   {
-    name: store.langTexts.tetrisName,
-    description: store.langTexts.tetrisDesc,
+    name: langTexts().tetrisName,
+    description: langTexts().tetrisDesc,
     component: <Tetris />,
     icon: TetrisIcon,
     windowState: {
@@ -76,8 +76,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.wallName,
-    description: store.langTexts.wallDesc,
+    name: langTexts().wallName,
+    description: langTexts().wallDesc,
     component: <Wallpapers />,
     icon: WallpaperIcon,
     windowState: {
@@ -86,8 +86,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.wikiName,
-    description: store.langTexts.wikiDesc,
+    name: langTexts().wikiName,
+    description: langTexts().wikiDesc,
     component: <Wikipedia />,
     icon: WikipediaIcon,
     windowState: {
@@ -97,8 +97,8 @@ const Apps: AppType[] = [
   },
 
   {
-    name: store.langTexts.ghName,
-    description: store.langTexts.ghDesc,
+    name: langTexts().ghName,
+    description: langTexts().ghDesc,
     component: <Github />,
     icon: GithubLogo,
     windowState: {
@@ -107,8 +107,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.lnName,
-    description: store.langTexts.lnDesc,
+    name: langTexts().lnName,
+    description: langTexts().lnDesc,
     component: <Wikipedia />,
     icon: LinkedinLogo,
     windowState: {
@@ -117,8 +117,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.emailName,
-    description: store.langTexts.emailDesc,
+    name: langTexts().emailName,
+    description: langTexts().emailDesc,
     component: <Wikipedia />,
     icon: GmailLogo,
     windowState: {
@@ -127,8 +127,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.pacmanName,
-    description: store.langTexts.pacmanDesc,
+    name: langTexts().pacmanName,
+    description: langTexts().pacmanDesc,
     component: <Pacman />,
     icon: PacmanLogo,
     windowState: {
@@ -137,8 +137,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.vsName,
-    description: store.langTexts.vsDesc,
+    name: langTexts().vsName,
+    description: langTexts().vsDesc,
     component: <Vscode />,
     icon: VscodeLogo,
     windowState: {
@@ -147,8 +147,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.chromeName,
-    description: store.langTexts.chromeDesc,
+    name: langTexts().chromeName,
+    description: langTexts().chromeDesc,
     component: <Chrome />,
     icon: ChromeLogo,
     windowState: {
@@ -157,8 +157,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.paintName,
-    description: store.langTexts.paintDesc,
+    name: langTexts().paintName,
+    description: langTexts().paintDesc,
     component: <MSpaint />,
     icon: PaintLogo,
     windowState: {
@@ -167,8 +167,8 @@ const Apps: AppType[] = [
     },
   },
   {
-    name: store.langTexts.minesweeperName,
-    description: store.langTexts.minesweeperDesc,
+    name: langTexts().minesweeperName,
+    description: langTexts().minesweeperDesc,
     component: <Minesweeper />,
     icon: MinesweeperLogo,
     windowState: {

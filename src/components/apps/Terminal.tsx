@@ -1,6 +1,6 @@
 import { createSignal, onMount, For, JSX } from "solid-js";
-import { store } from "../../store";
-import { IconBrandGithub } from "@tabler/icons-solidjs";
+import { langTexts, store } from "../../store";
+import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-solidjs";
 
 interface TerminalLine {
   text: string;
@@ -12,11 +12,11 @@ export default function Terminal() {
   let terminalRef: HTMLDivElement | undefined;
 
   const [lines, setLines] = createSignal<JSX.Element[]>([
-    <div class="text-green">{store.langTexts.welcomeTerm}!</div>,
+    <div class="text-green">{langTexts().welcomeTerm}!</div>,
     <div class="text-yellow">
-      {store.langTexts.type} '
-      <span class="font-bold">{store.langTexts.help}</span>'{" "}
-      {store.langTexts.seeCommands}
+      {langTexts().type} '
+      <span class="font-bold">help</span>'{" "}
+      {langTexts().seeCommands}
     </div>,
     <br />,
   ]);
@@ -27,49 +27,49 @@ export default function Terminal() {
 
   const projects = [
     {
-      name: store.langTexts.torrentTitle,
+      name: langTexts().torrentTitle,
       url: "https://github.com/ilyes-ced/torrent",
-      description: store.langTexts.torrentDescriptionShort,
+      description: langTexts().torrentDescriptionShort,
     },
     {
-      name: store.langTexts.milanoteTitle,
+      name: langTexts().milanoteTitle,
       url: "https://github.com/ilyes-ced/graphnote",
-      description: store.langTexts.milanoteDescriptionShort,
+      description: langTexts().milanoteDescriptionShort,
     },
     {
-      name: store.langTexts.slackTitle,
+      name: langTexts().slackTitle,
       url: "https://github.com/ilyes-ced/slack_clone",
-      description: store.langTexts.slackDescriptionShort,
+      description: langTexts().slackDescriptionShort,
     },
     {
-      name: store.langTexts.clickupTitle,
+      name: langTexts().clickupTitle,
       url: "https://github.com/ilyes-ced/clickup_clone",
-      description: store.langTexts.clickupDescriptionShort,
+      description: langTexts().clickupDescriptionShort,
     },
     {
-      name: store.langTexts.classicTitle,
+      name: langTexts().classicTitle,
       url: "https://github.com/ilyes-ced/classic_games",
-      description: store.langTexts.classicDescriptionShort,
+      description: langTexts().classicDescriptionShort,
     },
     {
-      name: store.langTexts.brainfuckTitle,
+      name: langTexts().brainfuckTitle,
       url: "https://github.com/ilyes-ced/brainfuck",
-      description: store.langTexts.brainfuckDescriptionShort,
+      description: langTexts().brainfuckDescriptionShort,
     },
     {
-      name: store.langTexts.redditTitle,
+      name: langTexts().redditTitle,
       url: "https://github.com/ilyes-ced/reddit",
-      description: store.langTexts.redditDescriptionShort,
+      description: langTexts().redditDescriptionShort,
     },
     {
-      name: store.langTexts.chatAppJavaTitle,
+      name: langTexts().chatAppJavaTitle,
       url: "https://github.com/ilyes-ced/chat_app_java",
-      description: store.langTexts.chatAppJavaDescriptionShort,
+      description: langTexts().chatAppJavaDescriptionShort,
     },
     {
-      name: store.langTexts.blogsUITitle,
+      name: langTexts().blogsUITitle,
       url: "https://github.com/ilyes-ced/chat_app_java",
-      description: store.langTexts.blogsUIDescriptionShort,
+      description: langTexts().blogsUIDescriptionShort,
     },
   ];
 
@@ -80,15 +80,15 @@ export default function Terminal() {
           <div class="w-0 h-0 border-t-[0.625rem] border-t-transparent border-b-[0px] border-b-transparent border-l-[1rem] border-l-green bg-transparent rotate-180"></div>
           <div class="w-0 h-0 border-t-[0px] border-t-transparent border-b-[0.625rem] border-b-transparent border-l-[1rem] border-l-green bg-transparent rotate-180"></div>
         </div>
-        <span class="px-2 bg-green text-background font-extrabold h-[1.25rem]">
+        <span class="px-2 bg-green text-background font-extrabold h-[1.25rem] leading-5">
           ilyes
         </span>
         <div class="w-0 h-0 border-t-[0.625rem] border-t-transparent border-b-[0.625rem] border-b-transparent border-l-[1rem] border-l-green bg-blue"></div>
-        <span class="px-2 bg-blue text-background font-extrabold h-[1.25rem]">
+        <span class="px-2 bg-blue text-background font-extrabold h-[1.25rem] leading-5">
           ~
         </span>
         <div class="w-0 h-0 border-t-[0.625rem] border-t-transparent border-b-[0.625rem] border-b-transparent border-l-[1rem] border-l-blue bg-yellow"></div>
-        <span class="px-2 bg-yellow text-background font-extrabold h-[1.25rem]">
+        <span class="px-2 bg-yellow text-background font-extrabold h-[1.25rem] leading-5">
           $
         </span>
         <div class="w-0 h-0 border-t-[0.625rem] border-t-transparent border-b-[0.625rem] border-b-transparent border-l-[1rem] border-l-yellow bg-transparent"></div>
@@ -99,65 +99,52 @@ export default function Terminal() {
   const commands: Record<string, () => JSX.Element> = {
     help: () => (
       <div>
-        <p class="text-blue font-bold">{store.langTexts.systemCommand}:</p>
+        <p class="text-blue font-bold">{langTexts().systemCommand}:</p>
         <p class="text-foreground font-semibold">
           &emsp; help | h{" "}
-          <span class="font-normal">- {store.langTexts.helpCommand}</span>
+          <span class="font-normal">- {langTexts().helpCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; clear | cls{" "}
-          <span class="font-normal">- {store.langTexts.clearCommand}</span>
+          <span class="font-normal">- {langTexts().clearCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; neofetch | fetch{" "}
-          <span class="font-normal">- {store.langTexts.neofetchCommand}</span>
+          <span class="font-normal">- {langTexts().neofetchCommand}</span>
         </p>
 
-        <p class="text-blue font-bold">{store.langTexts.personalCommand}:</p>
+        <p class="text-blue font-bold">{langTexts().personalCommand}:</p>
         <p class="text-foreground font-semibold">
           &emsp; whoami{" "}
-          <span class="font-normal">- {store.langTexts.whoamiCommand}</span>
+          <span class="font-normal">- {langTexts().whoamiCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; skills{" "}
-          <span class="font-normal">- {store.langTexts.skillsCommand}</span>
+          <span class="font-normal">- {langTexts().skillsCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; projects{" "}
-          <span class="font-normal">- {store.langTexts.projectsCommand}</span>
+          <span class="font-normal">- {langTexts().projectsCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; resume{" "}
-          <span class="font-normal">- {store.langTexts.resumeCommand}</span>
+          <span class="font-normal">- {langTexts().resumeCommand}</span>
         </p>
 
-        <p class="text-blue font-bold">{store.langTexts.socialsCommand}:</p>
+        <p class="text-blue font-bold">{langTexts().socialsCommand}:</p>
 
         <p class="text-foreground font-semibold">
           &emsp; github | gh{" "}
-          <span class="font-normal">- {store.langTexts.githubCommand}</span>
+          <span class="font-normal">- {langTexts().githubCommand}</span>
         </p>
         <p class="text-foreground font-semibold">
           &emsp; linkedin | ln{" "}
-          <span class="font-normal">- {store.langTexts.linkedinCommand}</span>
+          <span class="font-normal">- {langTexts().linkedinCommand}</span>
         </p>
       </div>
     ),
 
     aboutme: () => <div>aboutme</div>,
-    github: () => (
-      <div class="flex items-center gap-2">
-        <span>{store.langTexts.redirecting}:</span>
-        <a
-          class="underline text-blue flex items-center gap-2"
-          href="https://github.com/ilyes-ced"
-          target="_blank"
-        >
-          <IconBrandGithub />
-          <p>https://github.com/ilyes-ced</p>
-        </a>
-      </div>
-    ),
     projects: () => (
       <>
         <br />
@@ -165,10 +152,10 @@ export default function Terminal() {
           <thead>
             <tr class="">
               <th class="border border-white px-4 py-2">
-                {store.langTexts.project}
+                {langTexts().project}
               </th>
               <th class="border border-white px-4 py-2">
-                {store.langTexts.description}
+                {langTexts().description}
               </th>
             </tr>
           </thead>
@@ -196,24 +183,40 @@ export default function Terminal() {
         </table>
       </>
     ),
-    skills: () => <div>{store.langTexts.skills}</div>,
+    skills: () => <div>{langTexts().skills}</div>,
     whoami: () => (
       <div>
         {" "}
-        <p class="text-lg">{store.langTexts.whoami1}</p>
-        <p class="text-lg mt-2">{store.langTexts.whoami2}</p>
+        <p class="text-lg">{langTexts().whoami1}</p>
+        <p class="text-lg mt-2">{langTexts().whoami2}</p>
       </div>
     ),
-    resume: () => <div>{store.langTexts.resume}</div>,
+    resume: () => <div>{langTexts().resume}</div>,
+    github: () => (
+      <div class="flex items-center gap-2">
+        <span>{langTexts().redirecting}:</span>
+        <a
+          class="underline text-blue flex items-center gap-2"
+          href="https://github.com/ilyes-ced"
+          target="_blank"
+        >
+          <IconBrandGithub />
+          <p>https://github.com/ilyes-ced</p>
+        </a>
+      </div>
+    ),
     linkedin: () => (
-      <a
-        class="underline text-blue flex items-center gap-2"
-        href="https://github.com/ilyes-ced"
-        target="_blank"
-      >
-        <IconBrandGithub />
-        <p>linkedin url goes here</p>
-      </a>
+      <div class="flex items-center gap-2">
+        <span>{langTexts().redirecting}:</span>
+        <a
+          class="underline text-blue flex items-center gap-2"
+          href="https://www.linkedin.com/in/ilyes-ced-1793a727b/"
+          target="_blank"
+        >
+          <IconBrandLinkedin />
+          <p>https://www.linkedin.com/in/ilyes-ced-1793a727b/</p>
+        </a>
+      </div>
     ),
     neofetch: () => (
       <div>
@@ -299,12 +302,12 @@ export default function Terminal() {
             return (
               <>
                 <div class="text-red font-bold">
-                  {store.langTexts.commandNotFound}: {currentCmd}
+                  {langTexts().commandNotFound}: {currentCmd}
                 </div>
                 <div class="text-yellow">
-                  {store.langTexts.type} '
-                  <span class="font-bold">{store.langTexts.help}</span>'{" "}
-                  {store.langTexts.seeCommands}
+                  {langTexts().type} '
+                  <span class="font-bold">help</span>'{" "}
+                  {langTexts().seeCommands}
                 </div>
               </>
             );

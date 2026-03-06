@@ -1,4 +1,4 @@
-import { store } from "../store";
+import { langTexts, store } from "../store";
 import { createEffect, For } from "solid-js";
 import { Apps } from "./Apps";
 import { IconPower } from "@tabler/icons-solidjs";
@@ -24,7 +24,7 @@ export default function () {
       </div>
 
       <div class="p-8">
-        <p class="pb-2">{store.langTexts.appsMenu}</p>
+        <p class="pb-2">{langTexts().appsMenu}</p>
 
         <div class="w-full h-full grid grid-cols-8 gap-4">
           <For each={Apps}>
@@ -46,7 +46,7 @@ export default function () {
 
       <div class="p-8">
         {/* maybe better to remove not sure */}
-        <p class="pb-2">{store.langTexts.recommended}</p>
+        <p class="pb-2">{langTexts().recommended}</p>
         <div class="w-full h-full grid grid-cols-2 gap-4">
           <For each={Apps.slice(0, 6)}>
             {(app, index) => {

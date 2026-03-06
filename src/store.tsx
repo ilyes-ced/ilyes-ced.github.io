@@ -1,6 +1,6 @@
 import { createStore } from "solid-js/store";
 import { Apps, AppType } from "./components/Apps";
-import { createEffect } from "solid-js";
+import { createEffect, createMemo, on } from "solid-js";
 import englishLang from "./lang/en.json";
 import frenchLang from "./lang/fr.json";
 import winn11_3 from "/src/assets/wallpapers/win11_3.jpg";
@@ -34,13 +34,20 @@ const [store, setStore] = createStore<GlobalStore>({
   theme: "default",
 });
 
-createEffect(() => {
-  if (store.lang === "Fr") {
-    setStore("langTexts", frenchLang);
-  } else if (store.lang === "En") {
-    setStore("langTexts", englishLang);
-  }
-});
+// createEffect(() => {
+//   console.log("language changed")
+//   console.log(store.lang)
+//   if (store.lang === "Fr") {
+//     setStore("langTexts", frenchLang);
+//   } else if (store.lang === "En") {
+//     setStore("langTexts", englishLang);
+//   }
+// });
+
+export const langTexts = createMemo(() =>
+  store.lang === "Fr" ? frenchLang : englishLang
+);
+
 
 function toggleMinMax(appName: string, minMax: "max" | "min") {
   const index = store.activeApps.findIndex((app) => app.name === appName);

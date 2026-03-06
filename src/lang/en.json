@@ -166,5 +166,9 @@
   "experienceTab": "Experience",
   "contactMeTab": "Contact Me",
   "contactMe": "Contact Me",
-  "commandNotFound": "Command not found"
+  "commandNotFound": "Command not found",
+  "doesntWork": "contact form doesnt work yet",
+  "contactSubjectPlaceholder": "Enter your Subject",
+  "contactTitlePlaceholder": "Enter your Email",
+  "contactMessagePlaceholder": "Enter your Message"
 }

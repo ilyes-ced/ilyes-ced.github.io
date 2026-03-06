@@ -3,7 +3,6 @@
   "projects": "Projets",
   "experience": "Expérience",
   "contact me": "Contactez-moi",
-
   "hey": "Salut 👋",
   "iam": "Je suis Ilyes",
   "jobTitle": "Développeur logiciel et Freelance",
@@ -16,19 +15,16 @@
   "frameworks": "Frameworks",
   "databases": "Bases de données",
   "os": "Systèmes d'exploitation",
-
   "education": "Éducation",
   "bachelor": "Licence en Technologie de l'Information",
   "y2022": "2022 à l'Université Abdelhamid Mehri Constantine 2, Constantine, Algérie",
   "master": "Master en Technologie de l'Information",
   "y2025": "2025 à l'Université Abdelhamid Mehri Constantine 2, Constantine, Algérie",
-
   "intern0": "Stage, Port d'Annaba",
   "intern1": "D'avril à juin 2024",
   "intern2": "Apprentissage de l'administration et de la configuration des réseaux",
   "intern3": "Aide au maintien du bon fonctionnement du réseau local",
   "intern4": "Installation de nouveaux équipements réseau (fibre optique, commutateurs et pare-feu) et extension du réseau à d'autres services du port",
-
   "torrentTitle": "Client Torrent",
   "torrentSubtitle": "Client Torrent implémenté en Rust",
   "torrentDescription": "Un client BitTorrent entièrement personnalisé, construit à partir de zéro en Rust, axé sur la performance, la fiabilité et l'apprentissage du fonctionnement interne du protocole BitTorrent.",
@@ -37,7 +33,6 @@
   "torrentFeatures2": "Téléchargement des morceaux et assemblage des fichiers",
   "torrentFeatures3": "Reprise du téléchargement après interruption",
   "torrentFeatures4": "TUI (Terminal UI) pour l'état du téléchargement en temps réel",
-
   "milanoteTitle": "Application de productivité et de gestion (WIP)",
   "milanoteSubtitle": "Un outil de productivité et d'organisation personnalisable inspiré de Milanote, Miro et Kinopio.",
   "milanoteDescription": "Construit de A à Z en tant qu'application de bureau, cet outil permet aux utilisateurs d'organiser visuellement leurs pensées, leurs tâches et leurs projets à l'aide d'un canevas de type glisser-déposer. Les principales caractéristiques sont les suivantes :",
@@ -47,7 +42,6 @@
   "milanoteFeatures3": "Prise en charge de divers types de nœuds : listes de contrôle, notes en texte enrichi, images, liens, etc.",
   "milanoteFeatures4": "Plans pour des types de nœuds supplémentaires (par exemple, médias, traqueurs d'activité, intégrations)",
   "milanoteFeatures5": "La feuille de route future comprend le cryptage et des fonctions de sécurité avancées",
-
   "slackTitle": "Clone de Slack",
   "slackSubtitle": "Une application de chat d'équipe en temps réel construite avec des technologies web modernes",
   "slackDescription": "Une plateforme de communication inspirée de Slack, conçue pour les équipes et la collaboration. Comprend la messagerie en temps réel, les canaux et la gestion de l'espace de travail.",
@@ -56,7 +50,6 @@
   "slackFeatures2": "Éditeur de texte enrichi pour la saisie de chat",
   "slackFeatures3": "Authentification des utilisateurs et gestion des sessions",
   "slackFeatures4": "Basculement en mode sombre/clair",
-
   "clickupTitle": "Clone de ClickUp",
   "clickupSubtitle": "Plateforme de gestion de projets et de tâches construite à partir de zéro",
   "clickupDescription": "Un outil de productivité et de collaboration inspiré de ClickUp, conçu pour rationaliser le suivi des tâches, le travail d'équipe et l'organisation des projets.",
@@ -65,7 +58,6 @@
   "clickupFeatures2": "Vues en tableaux, en listes et en calendriers",
   "clickupFeatures1": "Commentaires, pièces jointes et collaboration en équipe",
   "clickupFeatures0": "Authentification des utilisateurs, profils, permissions",
-
   "classicTitle": "Collection de jeux classiques",
   "classicSubtitle": "Une collection de jeux classiques construits à partir de zéro",
   "classicDescription": "Un ensemble de jeux intemporels des débuts de l'utilisation de l'ordinateur, réimplémentés dans les technologies web modernes.",
@@ -74,14 +66,12 @@
   "classicFeatures2": "Commandes réactives et rythme de jeu",
   "classicFeatures3": "Gestion de l'état et rendu à partir de zéro",
   "classicFeatures4": "Conçu pour l'apprentissage des concepts fondamentaux du développement de jeux",
-
   "brainfuckTitle": "Interpréteur Brainf*ck",
   "brainfuckSubtitle": "Un interpréteur minimal du langage Brainf*ck écrit en C",
   "brainfuckDescription": "Un interpréteur léger et efficace pour le langage de programmation ésotérique Brainf*ck, écrit à partir de zéro en C.",
   "brainfuckFeatures0": "Analyse et exécute les commandes Brainf*ck",
   "brainfuckFeatures1": "Simulation de bande mémoire et de pointeur",
   "brainfuckFeatures2": "Interface CLI simple",
-
   "redditTitle": "Clone de Reddit",
   "redditSubtitle": "Un clone Reddit full-stack avec des technologies web modernes",
   "redditDescription": "Un clone Reddit riche en fonctionnalités, reproduisant les fonctionnalités de base à l'aide de technologies web modernes.",
@@ -90,7 +80,6 @@
   "redditFeatures2": "Commentaires avec fils de discussion imbriqués",
   "redditFeatures3": "Vote positif et négatif des messages et des commentaires",
   "redditFeatures4": "Authentification des utilisateurs et gestion des profils",
-
   "chatAppJavaTitle": "Application de chat multi-clients Java",
   "chatAppJavaSubtitle": "Une application de chat en temps réel construite avec JavaFX et MySQL",
   "chatAppJavaDescription": "Une application de chat de bureau prenant en charge plusieurs clients, avec messagerie en temps réel et un backend de base de données MySQL.",
@@ -99,7 +88,6 @@
   "chatAppJavaFeatures2": "Historique des messages stocké dans la base de données MySQL",
   "chatAppJavaFeatures3": "Liste des utilisateurs actifs avec mises à jour de l'état",
   "chatAppJavaFeatures4": "Fonctionnalité de déconnexion",
-
   "blogsUITitle": "Interface utilisateur de blogs",
   "blogsUISubtitle": "Une interface de blog minimaliste présentant une conception d'interface utilisateur brutaliste",
   "blogsUIDescription": "Une interface de blog simple et propre construite avec React, Vite et TailwindCSS, parfaite pour présenter des articles de blog dans une interface utilisateur réactive et moderne.",
@@ -108,16 +96,13 @@
   "blogsUIFeatures2": "Stylisé avec TailwindCSS pour une conception rapide et réactive",
   "blogsUIFeatures3": "Développement rapide avec Vite et remplacement de module à chaud",
   "blogsUIFeatures4": "Conception réactive pour les appareils de bureau et mobiles",
-
   "contact0": "Vous avez une idée de projet, une question ou voulez simplement dire bonjour ?",
   "contact1": "Je suis toujours ouvert à discuter de logiciels, de technologies ou de collaborations potentielles.",
   "contact2": "Envoyez-moi un message, je vous répondrai dès que possible.",
-
   "Subject": "Sujet",
   "Email": "Email",
   "Message": "Message",
   "Send": "Envoyer",
-
   "torrentDescriptionShort": "Client Torrent implémenté en Rust",
   "milanoteDescriptionShort": "Un outil de productivité et d'organisation personnalisable inspiré de Milanote, Miro et Kinopio.",
   "slackDescriptionShort": "Une application de chat d'équipe en temps réel construite avec des technologies web modernes",
@@ -127,12 +112,10 @@
   "redditDescriptionShort": "Un clone Reddit full-stack avec des technologies web modernes",
   "chatAppJavaDescriptionShort": "Une application de chat en temps réel construite avec JavaFX et MySQL",
   "blogsUIDescriptionShort": "Une application de chat en temps réel construite avec JavaFX et MySQL",
-
   "welcomeTerm": "Bienvenue sur mon terminal de portfolio",
   "help": "aide",
   "type": "Tapez",
   "seeCommands": "pour voir les commandes disponibles.",
-
   "systemCommand": "Commandes système",
   "helpCommand": "Afficher les commandes disponibles",
   "clearCommand": "Effacer le terminal",
@@ -146,15 +129,12 @@
   "githubCommand": "Aller sur mon profil github",
   "linkedinCommand": "Aller sur mon profil linkedin",
   "redirecting": "Redirection vers",
-
   "project": "Projet",
   "description": "Description",
   "resume": "CV",
   "setWallpaper": "Définir comme fond d'écran",
-
   "appsMenu": "Menu des applications",
   "recommended": "Recommandé",
-
   "termName": "Terminal",
   "termDesc": "Portfolio au format CLI",
   "portName": "Ilyes",
@@ -181,11 +161,14 @@
   "paintDesc": "outil de dessin Microsoft original",
   "minesweeperName": "minesweeper",
   "minesweeperDesc": "jeu original de dragueur de mines Microsoft",
-
   "homeTab": "Accueil",
   "projectsTab": "Projets",
   "experienceTab": "Expérience",
   "contactMeTab": "Contactez-moi",
   "contactMe": "Contactez-moi",
-  "commandNotFound": "Commande introuvable"
+  "commandNotFound": "Commande introuvable",
+  "doesntWork": "Le formulaire de contact ne fonctionne pas encore",
+  "contactSubjectPlaceholder": "Enter votre Object",
+  "contactTitlePlaceholder": "Enter votre Email",
+  "contactMessagePlaceholder": "Enter votre Message"
 }

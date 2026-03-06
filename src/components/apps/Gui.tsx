@@ -7,17 +7,17 @@ import Socials from "./gui/Socials";
 import Education from "./gui/Education";
 
 const pages = [
-  { name: store.langTexts.homeTab, content: () => <AboutMe /> }, // education and experience and resume here
+  { name: langTexts().homeTab, content: () => <AboutMe /> }, // education and experience and resume here
   // { name: "github", content: () => <Projects /> }, // put github url in projects and solcials
-  { name: store.langTexts.projectsTab, content: () => <Projects /> },
+  { name: langTexts().projectsTab, content: () => <Projects /> },
   // { name: "education", content: () => <Education /> },
-  { name: store.langTexts.experienceTab, content: () => <Experience /> },
+  { name: langTexts().experienceTab, content: () => <Experience /> },
   // { name: "resume", content: () => <Projects /> },
-  { name: store.langTexts.contactMeTab, content: () => <Socials /> },
+  { name: langTexts().contactMeTab, content: () => <Socials /> },
 ];
 
 import { createSignal } from "solid-js";
-import { store } from "../../store";
+import { langTexts, store } from "../../store";
 
 export default function FileExplorer() {
   const [activePage, setActivePage] = createSignal(0);
