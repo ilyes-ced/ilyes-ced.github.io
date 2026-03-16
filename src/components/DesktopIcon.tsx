@@ -80,7 +80,7 @@ export default function DesktopIcon(props: any) {
             window.open("https://github.com/ilyes-ced", "_blank");
             return;
           } else if (props.name === "Email") {
-            window.open("ilyes@gmail.com", "_blank");
+            window.open("mailto:ilyes.chiheb@proton.me", "_blank");
             return;
           }
           setStore("activeApps", (apps) => [
